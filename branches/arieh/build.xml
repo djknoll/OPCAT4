@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Opcat2" default="build" basedir=".">
+
+    <property file="build.properties"/>
+
+    <condition property="compile.admin">
+        <equals arg1="${isAdmin}" arg2="true"/>
+    </condition>
+
+    <condition property="compile.client">
+        <equals arg1="${isAdmin}" arg2="false"/>
+    </condition>
+
+    <target name="init_admin" if="compile.admin" description="Delete all generated directories, and creates new ones">
+        <mkdir dir="${unrestricted_temp}${file.separator}RPGConvertorSourceFiles"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}AdminConsole"/>
+
+        <mkdir dir="${restricted_temp}${file.separator}RPGConvertorSourceFiles"/>
+        <mkdir dir="${restricted_temp}${file.separator}AdminConsole"/>
+        <mkdir dir="${restricted_temp}${file.separator}AdminConsole{file.separator}SourceFiles"/>
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}unrestricted-admin.iss"
+              todir="${unrestricted_temp}"/>
+    </target>
+
+
+    <target name="init" description="Delete all generated directories, and creates new ones">
+
+
+        <delete dir="${root_dir}"/>
+        <mkdir dir="${root_dir}"/>
+
+
+        <mkdir dir="${bin_dir}"/>
+        <mkdir dir="${restricted}"/>
+        <mkdir dir="${unrestricted}"/>
+        <mkdir dir="${restricted_temp}"/>
+        <mkdir dir="${unrestricted_temp}"/>
+
+
+        <replace
+                file="${intellij.source.client}${file.separator}src${file.separator}gui${file.separator}AboutDialog.java"
+                token="Version:       VERSION" value="Version:       ${version}"/>
+
+        <replace
+                file="${intellij.source.client}${file.separator}src${file.separator}gui${file.separator}license${file.separator}RestrictedLicense.java"
+                token="private static final int MAX_NUM_OF_THINGS = 150;"
+                value="private static final int MAX_NUM_OF_THINGS = ${things};"/>
+
+        <tstamp>
+            <format property="TODAY" pattern="dd-MMMM-yyyy" locale="en,UK"/>
+        </tstamp>
+
+        <replace
+                file="${intellij.source.client}${file.separator}src${file.separator}gui${file.separator}AboutDialog.java"
+                token="Date:  DATE" value="Date:  ${TODAY}"/>
+
+
+        <delete dir="${unrestricted_temp}"/>
+        <delete dir="${restricted_temp}"/>
+
+        <mkdir dir="${unrestricted_temp}"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}examples"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}backup"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}icons"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}models"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}help"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}lib"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}Output"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}codeGenerator"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}api"/>
+        <mkdir dir="${unrestricted_temp}${file.separator}api${file.separator}doc"/>
+
+        <copy todir="${unrestricted_temp}${file.separator}examples">
+            <fileset dir="${intellij.source.client}${file.separator}Examples"/>
+        </copy>
+
+        <copy todir="${unrestricted_temp}${file.separator}Opcat.Structure">
+            <fileset dir="${intellij.source.client}${file.separator}Build${file.separator}Opcat.Structure"/>
+        </copy>
+
+        <copy todir="${unrestricted_temp}${file.separator}help">
+            <fileset dir="${intellij.source.client}${file.separator}help"/>
+        </copy>
+        <copy todir="${unrestricted_temp}${file.separator}codeGenerator">
+            <fileset dir="${intellij.source.client}${file.separator}codeGenerator"/>
+        </copy>
+        <copy todir="${unrestricted_temp}${file.separator}lib">
+            <fileset dir="${intellij.source.client}${file.separator}lib"/>
+        </copy>
+        <copy todir="${unrestricted_temp}${file.separator}api">
+            <fileset dir="${intellij.source.client}${file.separator}lib"/>
+        </copy>
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Opcat2_16x16.ico"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}user.bat"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Opcat2_32x32.ICO"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Opcat2.html"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}clients configs${file.separator}${client}.properties"
+              tofile="${unrestricted_temp}${file.separator}opcat.properties"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}doreq"
+              tofile="${unrestricted_temp}${file.separator}doreq"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Opcat2.exe"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}salicense.dat"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Dataform.xlt"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}systems.ops"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}colors.ops"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}opcat.bat"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}lib${file.separator}pgs.properties"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}lib${file.separator}log4j.properties"
+              todir="${unrestricted_temp}"/>
+
+
+        <copy todir="${restricted_temp}">
+            <fileset dir="${unrestricted_temp}"/>
+        </copy>
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}unrestricted_license.lic"
+              tofile="${unrestricted_temp}${file.separator}license.lic"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}restricted_license.lic"
+              tofile="${restricted_temp}${file.separator}license.lic"/>
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}unrestricted.iss"
+              todir="${unrestricted_temp}"/>
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}restricted.iss"
+              todir="${restricted_temp}"/>
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}RestrictedVersionEULA.rtf"
+              todir="${restricted_temp}"/>
+
+        <!-- create a property containing all .jar files, prefix lib/, and seperated with a space -->
+        <pathconvert property="libs.project" pathsep=" ">
+            <mapper>
+                <chainedmapper>
+                    <flattenmapper/>
+                    <globmapper from="*" to="lib/*"/>
+                </chainedmapper>
+            </mapper>
+            <path>
+                <fileset dir="${intellij.source.client}${file.separator}lib">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </path>
+        </pathconvert>
+
+    </target>
+
+    <target name="admin_console" if="compile.admin" description="Compile OPCAT Admin Console; production classes">
+
+        <jar destfile="${restricted_temp}${file.separator}adminconsole.jar"
+             basedir="${intellij.out.adminconsole}">
+            <manifest>
+                <attribute name="Main-Class" value="AdminConsole.AdminConsoleApplication"/>
+                <attribute name="Class-Path" value="${libs.project} ./Opcat2.jar  "/>
+            </manifest>
+        </jar>
+
+        <copy file="${restricted_temp}${file.separator}adminconsole.jar"
+              todir="${unrestricted_temp}${file.separator}"/>
+
+    </target>
+
+    <target name="rpg_convertor" if="compile.admin" description="Compile OPCAT RPG Convertor; production classes">
+
+        <jar destfile="${restricted_temp}${file.separator}lib${file.separator}rpgconvertor.jar"
+             basedir="${intellij.out.rpgconvertor}">
+            <manifest>
+                <attribute name="Main-Class" value="com.opcat.rpg.RPGConvertorApplication"/>
+                <attribute name="Class-Path" value="${libs.project} ./Opcat2.jar "/>
+            </manifest>
+        </jar>
+
+        <copy file="${restricted_temp}${file.separator}lib${file.separator}rpgconvertor.jar"
+              todir="${unrestricted_temp}"/>
+
+    </target>
+
+    <target name="jar" description="Compile OPCAT" depends="init">
+
+        <javac srcdir="${intellij.source.client}${file.separator}src"
+               destdir="${intellij.out.client}"
+               classpath="${libs.project} lib/ images/ ."
+                />
+        <replace
+                file="${intellij.source.client}${file.separator}src${file.separator}gui${file.separator}license${file.separator}RestrictedLicense.java"
+                token="private static final int MAX_NUM_OF_THINGS = ${things};"
+                value="private static final int MAX_NUM_OF_THINGS = 150;"/>
+
+        <replace
+                file="${intellij.source.client}${file.separator}src${file.separator}gui${file.separator}AboutDialog.java"
+                token="Version:       ${version}" value="Version:       VERSION"/>
+
+        <tstamp>
+            <format property="TODAY" pattern="dd-MMMM-yyyy" locale="en,UK"/>
+        </tstamp>
+        <replace
+                file="${intellij.source.client}${file.separator}src${file.separator}gui${file.separator}AboutDialog.java"
+                token="Date:  ${TODAY}" value="Date:  DATE"/>
+
+
+        <jar destfile="${restricted_temp}${file.separator}Opcat2.jar" basedir="${intellij.out.client}">
+            <manifest>
+                <attribute name="Main-Class" value="gui.Opcat2"/>
+                <attribute name="Class-Path" value="${libs.project}
+                lib/ images/ ."/>
+            </manifest>
+        </jar>
+
+        <copy file="${restricted_temp}${file.separator}Opcat2.jar" todir="${unrestricted_temp}"/>
+    </target>
+
+
+    <target name="javadoc" description="JARs the Task" depends="jar">
+        <javadoc destdir="${unrestricted_temp}${file.separator}api${file.separator}doc" author="true" version="true"
+                 use="true" windowtitle="OPCAT II API">
+
+            <fileset dir="${root_dir}${file.separator}src" defaultexcludes="yes">
+                <include name="**${file.separator}*.java"/>
+            </fileset>
+
+            <doctitle>
+                <![CDATA[<h1>OPCAT II</h1>]]>
+            </doctitle>
+
+            <bottom>
+                <![CDATA[<i>Copyright &#169; 2010 OPCAT Inc. All Rights Reserved.</i>]]>
+            </bottom>
+
+            <tag name="todo" scope="all" description="To do:"/>
+            <group title="OPCAT II API" packages="src.*"/>
+            <link offline="true" href="http://java.sun.com/products/jdk/1.2/docs/api/"
+                  packagelistLoc="C:${file.separator}tmp"/>
+            <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+        </javadoc>
+    </target>
+
+    <target name="jar_cleanup" description="cleanup after jar is run">
+        <copy file="${unrestricted_temp}${file.separator}Opcat2.jar"
+              tofile="${unrestricted_temp}${file.separator}api${file.separator}Opcat2.jar"/>
+        <copy todir="${restricted_temp}${file.separator}api${file.separator}doc">
+            <fileset dir="${unrestricted_temp}${file.separator}api${file.separator}doc"/>
+        </copy>
+        <copy file="${restricted_temp}${file.separator}Opcat2.jar"
+              tofile="${restricted_temp}${file.separator}api${file.separator}Opcat2.jar"/>
+    </target>
+
+    <target name="create_unrestricted_exe" if="compile.client" description="make setup files">
+        <exec dir="${unrestricted_temp}" executable="${installer}">
+            <arg line=" ${arg_line} /cc unrestricted.iss"/>
+        </exec>
+        <copy file="${unrestricted_temp}${file.separator}Output${file.separator}unrestricted.exe"
+              tofile="${unrestricted}${file.separator}ops-${version}-${client}-installer.exe"/>
+    </target>
+
+    <target name="create_restricted_exe" if="compile.client" description="make setup files">
+        <exec dir="${restricted_temp}" executable="${installer}">
+            <arg line=" ${arg_line} /cc restricted.iss"/>
+        </exec>
+        <copy file="${restricted_temp}${file.separator}Output${file.separator}restricted.exe"
+              tofile="${restricted}${file.separator}ops-${version}-${client}-limited-installer.exe"/>
+    </target>
+
+    <target name="create_admin_exe" if="compile.admin" description="make setup files">
+        <exec dir="${unrestricted_temp}" executable="${installer}">
+            <arg line=" ${arg_line} /cc unrestricted-admin.iss"/>
+        </exec>
+        <copy file="${unrestricted_temp}${file.separator}Output${file.separator}unrestricted-admin.exe"
+              tofile="${unrestricted}${file.separator}ops-${version}-${client}-installer.exe"/>
+    </target>
+
+    <target name="create_exe" depends="create_restricted_exe,create_unrestricted_exe,create_admin_exe"
+            description="make setup files">
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Autorun.inf"
+              tofile="${unrestricted}${file.separator}Autorun.inf"/>
+
+        <copy file="${intellij.source.client}${file.separator}Build${file.separator}Autorun.inf"
+              tofile="${restricted}${file.separator}Autorun.inf"/>
+
+        <copy file="${intellij.source.client}${file.separator}whatsnew.txt"
+              tofile="${unrestricted}${file.separator}whatsnew-${client}.txt"/>
+
+        <copy file="${intellij.source.client}${file.separator}whatsnew.txt"
+              tofile="${restricted}${file.separator}whatsnew-${client}.txt"/>
+
+        <antcall target="zip"/>
+
+        <delete dir="${root_dir}">
+        </delete>
+
+    </target>
+
+    <target name="zip" if="compile.client">
+
+        <zip destfile="${unrestricted}${file.separator}ops-${version}-${client}-api.zip"
+             basedir="${unrestricted_temp}${file.separator}api"/>
+
+        <zip destfile="${restricted}${file.separator}ops-${version}-${client}-api.zip"
+             basedir="${restricted_temp}${file.separator}api"/>
+
+    </target>
+
+
+    <target name="test" depends="init,jar">
+        <property name="test.class.name" value="categories.tests.CategoriesTest"/>
+        <path id="test.classpath">
+            <pathelement location="${unrestricted_temp}"/>
+            <pathelement location="${root_dir}${file.separator}lib/junit-4.7.jar"/>
+            <fileset dir="${root_dir}${file.separator}lib">
+                <include name="**/*.jar"/>
+            </fileset>
+            <fileset dir="${unrestricted_temp}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </path>
+
+        <junit fork="yes" haltonfailure="no">
+            <test name="${test.class.name}"/>
+            <formatter type="plain" usefile="false"/>
+            <classpath refid="test.classpath"/>
+        </junit>
+    </target>
+
+
+    <target name="build" depends="init,init_admin,jar,admin_console,rpg_convertor,jar_cleanup,create_exe"
+            description="building">
+
+    </target>
+
+    <target name="compile" depends="init,jar" description="building and running junit tests without packaging">
+
+    </target>
+
+</project>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="opcat2" default="cleanup" basedir=".">
+    <property name="src" value="."/> 
+	<property name="bin_dir" value="bin"/>
+	
+	<property name="restricted" value="${src}/Build/restricted/temp"/>
+	<property name="unrestricted" value="${src}/Build/unrestricted/temp"/>
+	
+	<property name="istool" value="C:\Program Files\ISTool\istool.exe"/>
+	
+	<target name="init" description="Delete all generated directories, and creates new ones">
+		
+		
+	    <delete dir="${unrestricted}"/>
+		<mkdir dir="${unrestricted}"/>
+		<mkdir dir="${unrestricted}/examples"/>
+		<mkdir dir="${unrestricted}/help"/>
+		<mkdir dir="${unrestricted}/lib"/>
+		<mkdir dir="${unrestricted}/Output"/>
+		<mkdir dir="${unrestricted}/codeGenerator"/>	
+		<copy todir="${unrestricted}/examples">
+	    	<fileset dir="${src}/Examples"/>
+	  	</copy>
+		<copy todir="${unrestricted}/help">
+	    	<fileset dir="${src}/help"/>
+	  	</copy>
+		<copy todir="${unrestricted}/codeGenerator">
+	    	<fileset dir="${src}/codeGenerator"/>
+	  	</copy>	
+		<copy todir="${unrestricted}/lib">
+		    	<fileset dir="${src}/lib"/>
+		</copy>				
+		<copy file="${src}/Build/Opcat2_32x32.ICO" todir="${unrestricted}"/>
+		<copy file="${src}/Build/Opcat2_16x16.ICO" todir="${unrestricted}"/>
+		<copy file="${src}/Build/opcat2.html" todir="${unrestricted}"/>
+		<copy file="${src}/conf.txt" todir="${unrestricted}"/>
+		<copy file="${src}/error.log" todir="${unrestricted}"/>
+		<copy file="${src}/Build/unrestricted.iss" todir="${unrestricted}"/>		
+		<copy file="${src}/Build/unrestricted_license.lic" tofile="${unrestricted}/license.lic"/>		
+		<copy file="${src}/Build/opcat2.exe" todir="${unrestricted}"/>		
+
+		
+	    <delete dir="${restricted}"/>
+		<mkdir dir="${restricted}"/>
+		<mkdir dir="${restricted}/examples"/>
+		<mkdir dir="${restricted}/help"/>
+		<mkdir dir="${restricted}/lib"/>
+		<mkdir dir="${restricted}/Output"/>
+		<mkdir dir="${restricted}/codeGenerator"/>	
+		<copy todir="${restricted}/examples">
+	    	<fileset dir="${src}/Examples"/>
+	  	</copy>
+		<copy todir="${restricted}/help">
+	    	<fileset dir="${src}/help"/>
+	  	</copy>
+		<copy todir="${restricted}/codeGenerator">
+	    	<fileset dir="${src}/codeGenerator"/>
+	  	</copy>	
+		<copy todir="${restricted}/lib">
+		    	<fileset dir="${src}/lib"/>
+		</copy>				
+		<copy file="${src}/Build/Opcat2_32x32.ICO" todir="${restricted}"/>
+		<copy file="${src}/Build/Opcat2_16x16.ICO" todir="${restricted}"/>
+		<copy file="${src}/Build/opcat2.html" todir="${restricted}"/>
+		<copy file="${src}/conf.txt" todir="${restricted}"/>
+		<copy file="${src}/error.log" todir="${restricted}"/>
+		<copy file="${src}/Build/restricted.iss" todir="${restricted}"/>		
+		<copy file="${src}/Build/restricted_license.lic" tofile="${restricted}/license.lic"/>		
+		<copy file="${src}/Build/opcat2.exe" todir="${restricted}"/>				
+		<copy file="${src}/Build/RestrictedVersionEULA.rtf" todir="${restricted}"/>				
+		
+	
+	</target>
+	
+	<target name="jar" description="JARs the Task" depends="init">
+	        <jar destfile="${restricted}/Opcat2.jar" basedir="${bin_dir}">
+	        	<manifest>
+       	 			<attribute name="Main-Class" value="gui.Opcat2"/>
+	        		<attribute name="Class-Path" value="lib/jaxb-api.jar lib/jaxb-libs.jar lib/jaxb-ri.jar lib/jaxb-xjc.jar
+	        		  lib/jdom.jar lib/xercesImpl.jar lib/xalan.jar lib/CodeGenerator.jar lib/wsdl4j.jar lib/jaxrpc.jar lib/axis.jar lib/jbossall-client.jar
+	        		  lib/log4j-1.2.8.jar lib/commons-logging.jar lib/commons-discovery.jar
+	       		  lib/jta-spec1_0_1.jar lib/jaas.jar lib/commons-digester.jar lib/commons-collections.jar lib/commons-beanutils.jar
+	        		  lib/activation.jar lib/jaxp-api.jar lib/jaxb-impl.jar lib/xsdlib.jar lib/relaxngDatatype.jar lib/namespace.jar
+	        		  lib/jax-qname.jar lib/jaxb-xjc.jar lib/LayoutManager.jar"/>
+       	 		</manifest>
+	        </jar>
+		
+        <jar destfile="${unrestricted}/Opcat2.jar" basedir="${bin_dir}">
+        	<manifest>
+   	 			<attribute name="Main-Class" value="gui.Opcat2"/>
+        		<attribute name="Class-Path" value="lib/jaxb-api.jar lib/jaxb-libs.jar lib/jaxb-ri.jar lib/jaxb-xjc.jar
+        		  lib/jdom.jar lib/xercesImpl.jar lib/xalan.jar lib/CodeGenerator.jar lib/wsdl4j.jar lib/jaxrpc.jar lib/axis.jar lib/jbossall-client.jar
+        		  lib/log4j-1.2.8.jar lib/commons-logging.jar lib/commons-discovery.jar
+        		  lib/jta-spec1_0_1.jar lib/jaas.jar lib/commons-digester.jar lib/commons-collections.jar lib/commons-beanutils.jar
+        		  lib/activation.jar lib/jaxp-api.jar lib/jaxb-impl.jar lib/xsdlib.jar lib/relaxngDatatype.jar lib/namespace.jar
+        		  lib/jax-qname.jar lib/jaxb-xjc.jar lib/LayoutManager.jar"/>
+   	 		</manifest>
+        </jar>
+	</target>
+
+	<target name="do" description="try it" depends="jar">
+		<java jar="${restricted}/Opcat2.jar" fork="true" classpath="lib"/>
+		<java jar="${unrestricted}/Opcat2.jar" fork="true" classpath="lib"/>
+	</target>
+	
+	<target name="setup" description="make setup files" depends="do">		
+		<apply executable="${istool}" dir="${restricted}">
+		  <arg value="-compile"/>
+		  <fileset dir="${restricted}" includes="*.iss"/>
+		</apply>
+	
+		<apply executable="${istool}" dir="${unrestricted}">
+		  <arg value="-compile"/>
+		  <fileset dir="${unrestricted}" includes="*.iss"/>
+		</apply>		
+	</target>	
+	
+	<target name="cleanup" description="clean unneeded files and directories" depends="setup">
+		<copy file="${unrestricted}/Output/unrestricted.exe" tofile="${unrestricted}/../setup.exe"/>
+		<copy file="${restricted}/Output/restricted.exe" tofile="${restricted}/../setup.exe"/>		
+		<copy file="${src}/Build/Autorun.inf" tofile="${unrestricted}/../Autorun.inf"/>		
+		<copy file="${src}/Build/Autorun.inf" tofile="${restricted}/../Autorun.inf"/>		
+	    <delete dir="${unrestricted}"/>
+	    <delete dir="${restricted}"/>			
+	</target>
+	
+</project>

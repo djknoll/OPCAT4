@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2002,2003,2004 by eteration a.s.
+      www.eteration.com 
+      All rights reserved. -->
+
+
+<!-- Do server specific remove/registration tasks - 
+      this file is used if there is no undeploy.xml/deploy.xml
+      is specified in the .server files ... -->
+<project name="deployextension"  default="deploy"  basedir=".">
+	<target name="deploy" > </target>
+</project>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="opcat2" default="cleanup" basedir=".">
+	
+	
+	<property name="istool" value="C:\Program Files\ISTool\istool.exe"/>	
+	<property name="svnantpath" value="C:\Program Files\Subversion\svnant"/>			
+	
+	
+	<property name="root_dir" value="C:/OpcatBuild" />			
+	
+	<delete dir ="${root_dir}"/>
+	<mkdir dir="${root_dir}"/>		
+	 
+    <property file="${svnantpath}/build.properties" /> 
+	<path id="svnclasspath">
+		<pathelement location="${svnantpath}/lib/svnjavahl.jar" /> 
+		<pathelement location="${svnantpath}/lib/svnant.jar" /> 
+		<pathelement location="${svnantpath}/lib/svnClientAdapter.jar" /> 
+		<pathelement location="${svnantpath}/lib/jakarta-regexp-1.3.jar" /> 
+		<pathelement location="${svnantpath}/lib/commons-lang-2.0.jar" /> 		
+	</path>
+	
+	<target name="init" description="Delete all generated directories, and creates new ones">
+
+		<taskdef resource="svntask.properties" classpathref="svnclasspath" /> 
+		
+		<tstamp>
+			<format property="TODAY" pattern="d-MMMM-yyyy" locale="en"/>		
+		</tstamp>
+		
+		
+		<property name="urlRepos" value="https://www.opcat.com/svn/OPCAT_Inc/Opcat/trunk"/>
+		<svn javahl="false" username="raanan" password="kfiryeal">
+			<checkout url="${urlRepos}" destPath="${root_dir}" />
+		</svn> 		
+		
+		<path id="classpath">
+		     <fileset dir="lib">
+		        <include name="**/*.jar"/>
+		     </fileset>			
+		</path>		
+
+		<property name="bin_dir" value="${root_dir}/bin"/>	
+		<mkdir dir="${bin_dir}"/>
+		
+		<property name="restricted" value="${root_dir}/Build/restricted/temp"/>
+		<property name="unrestricted" value="${root_dir}/Build/unrestricted/temp"/>
+		<mkdir dir="${root_dir}/Build/restricted"/>			
+		<mkdir dir="${root_dir}/Build/unrestricted"/>	
+		<mkdir dir="${restricted}"/>	
+		<mkdir dir="${unrestricted}"/>			
+		
+		
+		<replace file="${root_dir}/src/gui/AboutDialog.java" token="Date:  CompileDate" value="Date:  ${TODAY}" />	
+		<touch file="${root_dir}/src/gui/AboutDialog.java" />
+		
+		<replace file="${root_dir}/src/gui/Opcat2.java" token="Debug.setDebugLevelToCore() ;" value="//Debug.setDebugLevelToCore() ;" />	
+		<touch file="${root_dir}/src/gui/util/debug/Debug.java" />				
+		
+	    <delete dir="${unrestricted}"/>
+		<mkdir dir="${unrestricted}"/>
+		<mkdir dir="${unrestricted}/examples"/>
+		<mkdir dir="${unrestricted}/help"/>
+		<mkdir dir="${unrestricted}/lib"/>
+		<mkdir dir="${unrestricted}/Output"/>
+		<mkdir dir="${unrestricted}/codeGenerator"/>	
+		<mkdir dir="${unrestricted}/api"/>		
+		<mkdir dir="${unrestricted}/api/doc"/>
+		<copy todir="${unrestricted}/examples">
+	    	<fileset dir="${root_dir}/Examples"/>
+	  	</copy>
+		<copy todir="${unrestricted}/help">
+	    	<fileset dir="${root_dir}/help"/>
+	  	</copy>
+		<copy todir="${unrestricted}/codeGenerator">
+	    	<fileset dir="${root_dir}/codeGenerator"/>
+	  	</copy>	
+		<copy todir="${unrestricted}/lib">
+		    	<fileset dir="${root_dir}/lib"/>
+		</copy>				
+		<copy todir="${unrestricted}/api">
+		    	<fileset dir="${root_dir}/lib"/>
+		</copy>								
+		<copy file="${root_dir}/Build/Opcat2_16x16.ICO" todir="${unrestricted}"/>		
+		<copy file="${root_dir}/Build/Opcat2_32x32.ICO" todir="${unrestricted}"/>
+		<copy file="${root_dir}/Build/opcat2.html" todir="${unrestricted}"/>
+		<copy file="${root_dir}/conf.txt" todir="${unrestricted}"/>
+		<copy file="${root_dir}/error.log" todir="${unrestricted}"/>
+		<copy file="${root_dir}/Build/unrestricted.iss" todir="${unrestricted}"/>		
+		<copy file="${root_dir}/Build/unrestricted_license.lic" tofile="${unrestricted}/license.lic"/>		
+		<copy file="${root_dir}/Build/opcat2.exe" todir="${unrestricted}"/>		
+
+		
+	    <delete dir="${restricted}"/>
+		<mkdir dir="${restricted}"/>
+		<mkdir dir="${restricted}/examples"/>
+		<mkdir dir="${restricted}/help"/>
+		<mkdir dir="${restricted}/lib"/>
+		<mkdir dir="${restricted}/Output"/>
+		<mkdir dir="${restricted}/codeGenerator"/>	
+		<mkdir dir="${restricted}/api"/>
+		<mkdir dir="${restricted}/api/doc"/>		
+		<copy todir="${restricted}/examples">
+	    	<fileset dir="${root_dir}/Examples"/>
+	  	</copy>
+		<copy todir="${restricted}/help">
+	    	<fileset dir="${root_dir}/help"/>
+	  	</copy>
+		<copy todir="${restricted}/codeGenerator">
+	    	<fileset dir="${root_dir}/codeGenerator"/>
+	  	</copy>	
+		<copy todir="${restricted}/lib">
+		    	<fileset dir="${root_dir}/lib"/>
+		</copy>				
+		<copy todir="${restricted}/api">
+		    	<fileset dir="${root_dir}/lib"/>
+		</copy>						
+		<copy file="${root_dir}/Build/Opcat2_32x32.ICO" todir="${restricted}"/>
+		<copy file="${root_dir}/Build/Opcat2_16x16.ICO" todir="${restricted}"/>
+		<copy file="${root_dir}/Build/opcat2.html" todir="${restricted}"/>
+		<copy file="${root_dir}/conf.txt" todir="${restricted}"/>
+		<copy file="${root_dir}/error.log" todir="${restricted}"/>
+		<copy file="${root_dir}/Build/restricted.iss" todir="${restricted}"/>		
+		<copy file="${root_dir}/Build/restricted_license.lic" tofile="${restricted}/license.lic"/>		
+		<copy file="${root_dir}/Build/opcat2.exe" todir="${restricted}"/>				
+		<copy file="${root_dir}/Build/RestrictedVersionEULA.rtf" todir="${restricted}"/>				
+		
+	
+	</target>
+
+	
+	<target name="jar" description="JARs the Task" depends="init">
+		
+		
+		<javac srcdir="${root_dir}/src"
+		       destdir="${bin_dir}"
+	       	   source="1.4"
+			   target="1.4"
+			   nowarn="true">
+			  <classpath refid="classpath"/>
+		</javac>	
+		
+		<copy todir="${bin_dir}"> 
+			<fileset dir="${root_dir}/src" casesensitive="no">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		
+		<jar destfile="${restricted}/Opcat2.jar" basedir="${bin_dir}">
+			<manifest>
+				<attribute name="Main-Class" value="gui.Opcat2"/>
+				<attribute name="Class-Path" value="lib/jaxb-api.jar lib/jaxb-libs.jar lib/jaxb-ri.jar lib/jaxb-xjc.jar
+				  lib/jdom.jar lib/xercesImpl.jar lib/xalan.jar lib/CodeGenerator.jar lib/wsdl4j.jar lib/jaxrpc.jar lib/axis.jar lib/jbossall-client.jar
+				  lib/log4j-1.2.8.jar lib/commons-logging.jar lib/commons-discovery.jar
+			  	  lib/jta-spec1_0_1.jar lib/jaas.jar lib/commons-digester.jar lib/commons-collections.jar lib/commons-beanutils.jar
+				  lib/activation.jar lib/jaxp-api.jar lib/jaxb-impl.jar lib/xsdlib.jar lib/relaxngDatatype.jar lib/namespace.jar
+				  lib/jax-qname.jar lib/jaxb-xjc.jar ."/>
+			</manifest>
+		</jar>
+		
+        <jar destfile="${unrestricted}/Opcat2.jar" basedir="${bin_dir}">
+        	<manifest>
+   	 			<attribute name="Main-Class" value="gui.Opcat2"/>
+        		<attribute name="Class-Path" value="lib/jaxb-api.jar lib/jaxb-libs.jar lib/jaxb-ri.jar lib/jaxb-xjc.jar
+        		  lib/jdom.jar lib/xercesImpl.jar lib/xalan.jar lib/CodeGenerator.jar lib/wsdl4j.jar lib/jaxrpc.jar lib/axis.jar lib/jbossall-client.jar
+        		  lib/log4j-1.2.8.jar lib/commons-logging.jar lib/commons-discovery.jar
+        		  lib/jta-spec1_0_1.jar lib/jaas.jar lib/commons-digester.jar lib/commons-collections.jar lib/commons-beanutils.jar
+        		  lib/activation.jar lib/jaxp-api.jar lib/jaxb-impl.jar lib/xsdlib.jar lib/relaxngDatatype.jar lib/namespace.jar
+        		  lib/jax-qname.jar lib/jaxb-xjc.jar ."/>
+   	 		</manifest>
+        </jar>
+		
+		
+		  <javadoc
+		           destdir="${unrestricted}/api/doc"
+		           author="true"
+		           version="true"
+		           use="true" 
+		           windowtitle="OPCAT II API">
+
+		    <fileset dir="${root_dir}/src" defaultexcludes="yes">
+		      <include name="exportedAPI/**"/>
+		      <exclude name="com/dummy/test/doc-files/**"/>
+		    </fileset>
+		  	
+		 	<doctitle><![CDATA[<h1>OPCAT II</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2005 OPCAT Inc. All Rights Reserved.</i>]]></bottom>
+		    <tag name="todo" scope="all" description="To do:"/>
+		    <group title="OPCAT II API read only" packages="src.exportedAPI.opcatAPI.*"/>
+		    <group title="OPCAT II API read/write" packages="src.exportedAPI.opcatAPIX.*"/>
+		    <link offline="true" href="http://java.sun.com/products/jdk/1.2/docs/api/" packagelistLoc="C:\tmp"/>
+		    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+		  </javadoc>
+		<copy file="${unrestricted}/Opcat2.jar" tofile="${unrestricted}/api/Opcat2.jar"/>		
+		
+		
+		  <javadoc
+		           destdir="${restricted}/api/doc"
+		           author="true"
+		           version="true"
+		           use="true"
+		           windowtitle="OPCAT II API">
+
+		    <fileset dir="${root_dir}/src" defaultexcludes="yes">
+		      <include name="exportedAPI/**"/>
+		      <exclude name="com/dummy/test/doc-files/**"/>
+		    </fileset>
+		  	
+		 	<doctitle><![CDATA[<h1>OPCAT II</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2005 OPCAT Inc. All Rights Reserved.</i>]]></bottom>
+		    <tag name="todo" scope="all" description="To do:"/>
+		    <group title="OPCAT II API read only" packages="src.exportedAPI.opcatAPI.*"/>
+		    <group title="OPCAT II API read/write" packages="src.exportedAPI.opcatAPIX.*"/>
+		    <link offline="true" href="http://java.sun.com/products/jdk/1.2/docs/api/" packagelistLoc="C:\tmp"/>
+		    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+		  </javadoc>	
+		  <copy file="${restricted}/Opcat2.jar" tofile="${restricted}/api/Opcat2.jar"/>				
+		
+	</target>
+	
+	<target name="setup" description="make setup files" depends="jar">		
+		<apply executable="${istool}" dir="${restricted}">
+		  <arg value="-compile"/>
+		  <fileset dir="${restricted}" includes="*.iss"/>
+		</apply>
+	
+		<apply executable="${istool}" dir="${unrestricted}">
+		  <arg value="-compile"/>
+		  <fileset dir="${unrestricted}" includes="*.iss"/>
+		</apply>		
+	</target>	
+	
+	<target name="cleanup" description="clean unneeded files and directories" depends="setup">
+		<copy file="${unrestricted}/Output/unrestricted.exe" tofile="${unrestricted}/../setup.exe"/>
+		<copy file="${restricted}/Output/restricted.exe" tofile="${restricted}/../setup.exe"/>		
+		<copy file="${root_dir}/Build/Autorun.inf" tofile="${unrestricted}/../Autorun.inf"/>		
+		<copy file="${root_dir}/Build/Autorun.inf" tofile="${restricted}/../Autorun.inf"/>		
+		<copy file="${root_dir}/whatsnew.txt" tofile="${unrestricted}/../whatsnew.txt"/>		
+		<copy file="${root_dir}/whatsnew.txt" tofile="${restricted}/../whatsnew.txt"/>	
+		<zip destfile="${unrestricted}/../api.zip"
+		       basedir="${unrestricted}/api"
+		/>	
+		<zip destfile="${restricted}/../api.zip"
+		       basedir="${restricted}/api"
+		/>			
+	    <delete	dir="${unrestricted}"/>
+		<delete	dir="${restricted}"/>
+	</target>
+	
+</project>

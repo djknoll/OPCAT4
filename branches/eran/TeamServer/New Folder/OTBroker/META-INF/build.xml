@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2002,2003,2004 by eteration a.s.
+      www.eteration.com 
+      All rights reserved. -->
+<!-- DO NOT MODIFY THIS FILE CHANGE THE SERVER FILE INSTEAD -->
+
+
+
+<project name="ejbModuleBuilder" default="ejbdoclet" basedir=".">
+
+   <!-- Init -->
+   <target name="init">
+      <property file="build.properties"/>
+   </target>
+
+   <!-- Run EJBDoclet -->
+   <target name="ejbdoclet" depends="init">
+	  <ant antfile="xdoclet.xml" dir="." target="ejbdoclet">
+	    <property name="ejb" value="${ejb}"/>
+	    <property name="deploy.dir" value="${deploy.dir}"/>
+        <property name="ejbsrc.dir" value="${ejbsrc.dir}" />
+        <property name="bin.dir" value="${bin.dir}" />    
+        <property name="project.dir" value="${project.dir}" />    
+        <property name="project.path" value="${project.path}" />    
+	  </ant>
+   </target>
+
+
+   <!-- Create EJB-JAR file -->
+   <target name="ejb-jar" depends="init">
+   	  <delete file="${ejb}.jar" failonerror="false" />
+      <jar jarfile="${ejb}.jar">         
+        <fileset dir="${project.dir}/${bin.dir}">   
+           <include name="**/*.*"/>
+        </fileset>
+        <fileset dir="..">   
+           <include name="META-INF/**/*.*"/>
+           <exclude name="META-INF/beans.xml"/>
+           <exclude name="META-INF/build.xml"/>
+           <exclude name="META-INF/deploy.xml"/>
+           <exclude name="META-INF/undeploy.xml"/>
+           <exclude name="META-INF/build.properties"/>
+           <exclude name="META-INF/ejbs.xml"/>
+           <exclude name="META-INF/xdoclet.xml"/>
+           <exclude name="META-INF/servers.xml"/>
+           <exclude name="META-INF/targets.xml"/>
+        </fileset>
+      </jar>
+   </target>
+
+
+   <!-- Deploy module to server ... -->
+   <target name="deploy" depends="ejb-jar">
+      <copy todir="${deploy.dir}">
+         <fileset dir="." includes="${ejb}.jar"/>
+      </copy>
+      <delete file="${ejb}.jar" failonerror="false" />
+   </target>
+
+   <!-- Do server specific registration tasks - deploy.xml is specified in 
+        the .server files and generated automatically. ... -->
+  <target name="deployTool">
+	  <ant antfile="./deploy.xml" dir="." target="deploy" inheritall="true">
+	  </ant>
+  </target> 
+    
+    
+   <!-- Remove module from the server ... -->
+   <target name="undeploy" depends="init">
+    <!-- Sometimes you can undeploy with deleting the module file but it is best dealt on an appserver basis
+         at undeployTool target -->
+   </target>
+   
+   <!-- Do server specific remove tasks - undeploy.xml is specified in 
+        the .server files and generated automatically. ... -->
+   <target name="undeployTool" depends="init">
+	  <ant antfile="./undeploy.xml" dir="." target="undeploy" inheritall="true">
+	  </ant>
+   </target> 
+  
+</project>

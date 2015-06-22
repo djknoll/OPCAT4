@@ -1,0 +1,175 @@
+<ejbbnd:EJBJarBinding xmi:version="2.0"
+   xmlns:xmi="http://www.omg.org/XMI" xmlns:ejbbnd="ejbbnd.xmi"
+   xmlns:ejb="ejb.xmi" xmlns:commonbnd="commonbnd.xmi"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmi:id="ejb-jar_ID_Bnd">
+
+   <ejbJar href="META-INF/ejb-jar.xml#ejb-jar_1"/>
+
+      <ejbBindings
+         xmi:id="Session_bnd_1"
+         jndiName="UserAccessBean">
+
+         <ejbRefBindings xmi:id="EJBRefBnd_1" jndiName="UserLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_1"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_2" jndiName="WorkgroupPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_2"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_3" jndiName="OpmModelPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_3"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_4" jndiName="CollaborativeSessionPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_4"/>
+         </ejbRefBindings>
+
+         <enterpriseBean
+            xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#Session_UserAccess" />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="Session_bnd_2"
+         jndiName="CollaborativeSessionAccessBean">
+
+         <ejbRefBindings xmi:id="EJBRefBnd_5" jndiName="CollaborativeSessionLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_5"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_6" jndiName="CollaborativeSessionPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_6"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_7" jndiName="OpmModelLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_7"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_8" jndiName="OpmModelPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_8"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_9" jndiName="WorkgroupLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_9"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_10" jndiName="WorkgroupPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_10"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_11" jndiName="UserLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_11"/>
+         </ejbRefBindings>
+
+         <enterpriseBean
+            xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#Session_CollaborativeSessionAccess" />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="Session_bnd_3"
+         jndiName="OpmModelAccessBean">
+
+         <ejbRefBindings xmi:id="EJBRefBnd_12" jndiName="OpmModelLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_12"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_13" jndiName="OpmModelPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_13"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_14" jndiName="WorkgroupLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_14"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_15" jndiName="WorkgroupPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_15"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_16" jndiName="UserLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_16"/>
+         </ejbRefBindings>
+
+         <enterpriseBean
+            xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#Session_OpmModelAccess" />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="Session_bnd_4"
+         jndiName="WorkgroupAccessBean">
+
+         <ejbRefBindings xmi:id="EJBRefBnd_17" jndiName="WorkgroupLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_17"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_18" jndiName="WorkgroupPermissionsLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_18"/>
+         </ejbRefBindings>
+         <ejbRefBindings xmi:id="EJBRefBnd_19" jndiName="UserLocal">
+            <bindingEjbRef href="META-INF/ejb-jar.xml#EJBRef_19"/>
+         </ejbRefBindings>
+
+         <enterpriseBean
+            xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#Session_WorkgroupAccess" />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_1"
+         jndiName="OpmModelPermissionsBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_OpmModelPermissions"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_2"
+         jndiName="UserBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_User"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_3"
+         jndiName="WorkgroupBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_Workgroup"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_4"
+         jndiName="RevisionBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_Revision"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_5"
+         jndiName="CollaborativeSessionPermissionsBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_CollaborativeSessionPermissions"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_6"
+         jndiName="CollaborativeSessionBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_CollaborativeSession"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_7"
+         jndiName="OpmModelBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_OpmModel"
+            />
+      </ejbBindings>
+
+      <ejbBindings
+         xmi:id="ContainerManagedEntity_bnd_8"
+         jndiName="WorkgroupPermissionsBean">
+
+         <enterpriseBean
+            xmi:type="ejb:Entity" href="META-INF/ejb-jar.xml#ContainerManagedEntity_WorkgroupPermissions"
+            />
+      </ejbBindings>
+
+</ejbbnd:EJBJarBinding>
+

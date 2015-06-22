@@ -1,0 +1,230 @@
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.frame
+{
+	border: 2px #345487 solid;
+}
+.texture
+{
+	background-image:url(images/textur.jpg);
+	font-size: 11px;
+	font-family: Tahoma;
+}
+.tableHeader
+{
+	background-color:#6599CC;
+	font-weight: bold;
+	color:#FFFFFF;
+	font-size: 12px;
+	font-family: Tahoma;
+	padding-left: 10px;
+	height:30px;	
+}
+.navigationRow
+{
+	background-color:#E4EAF2;
+	font-weight: bold;
+	color:#000000;
+	font-size: 11px;
+	font-family: Tahoma;
+	text-align:left;
+	padding-left: 10px;
+	height:30px;	
+}
+.navigationHeader 
+{
+	background-color:#D1DCEB;
+	font-weight: bold;
+	color:#3A4F6C;
+	font-size: 12px;
+	font-family: Tahoma;
+	text-align:center;
+	height:30px;	
+}
+.tableColumnHeaher 
+{
+	background-color:#ADC5E7;
+	font-weight: bold;
+	color:#3A4F6C;
+	font-size: 12px;
+	font-family: Tahoma;
+	text-align:center;
+	height:30px;	
+}
+.tableSpacerDark
+{
+	background-color:#ADC5E7;
+	font-weight: bold;
+	color:#3A4F6C;
+	font-size: 12px;
+	font-family: Tahoma;
+	text-align:center;
+}
+.tableSpacerLight
+{
+	background-color:#E4EAF2;
+	font-weight: bold;
+	color:#3A4F6C;
+	font-size: 12px;
+	font-family: Tahoma;
+	text-align:center;
+}
+.tableRowLite
+{
+	background-color:#E4EAF2;
+	color:#000000;
+	font-size: 11px;
+	font-family: Tahoma;
+	text-align:center;
+	height:30px;	
+}
+.tableRowLeft
+{
+	background-color:#DFE6EF;
+	font-weight: bold;
+	color:#000000;
+	font-size: 11px;
+	font-family: Tahoma;
+	text-align:left;
+	vertical-align:middle;
+	padding-left: 10px;
+	height:30px;	
+}
+.tableRowRight
+{
+	background-color:#E4EAF2;
+	color:#000000;
+	font-size: 11px;
+	font-family: Tahoma;
+	text-align:center;
+	padding-left: 10px;
+	height:30px;	
+}
+.tableRowDark 
+{
+	background-color:#DFE6EF;
+	color:#000000;
+	font-size: 11px;
+	font-family: Tahoma;
+	text-align:center;
+	height:30px;	
+}
+.texthome
+{
+	font-size: 11px;
+	font-family: Tahoma;
+}
+
+.texthomebold
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: black;
+	font-family: Tahoma;
+}
+
+A:link
+{
+	font-size: 11px;
+	color: #333366;
+	font-family: Tahoma;
+}
+A:visited
+{
+	font-size: 11px;
+	color: #ff6600;
+	font-family: Tahoma;
+}
+.Validator
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #d14624;
+	font-family: Tahoma;
+}
+.Error
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #ff9933;
+	font-family: Tahoma;
+}
+.menu
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #3F6042;
+	font-family: Tahoma;
+}
+.redFalse
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #D14624;
+	font-family: Tahoma;
+}
+
+.blue
+{
+	font-size: 11px;
+	color: #335EA4;
+	font-family: Tahoma;
+}
+.greenTrue
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #639666;
+	font-family: Tahoma;
+}
+.PageTitle
+{
+	font-weight: bold;
+	font-size: 20px;
+	color: #3F6042;
+	font-family: 'Trebuchet MS';
+}
+.PageSubTitle
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: #3F6042;
+	font-family: Tahoma;
+}
+
+.PageModeTitle
+{
+	font-weight: bold;
+	font-size: 20px;
+	color: #639666;
+	font-family: 'Trebuchet MS';
+}
+.TextBoxControl
+{
+	border: 1px solid #c8c7be;
+	font-size: 11px;
+	width: 150px;
+	font-family: Tahoma;
+	height: 16px;
+	padding-left: 10px;
+}
+.ButtonControl
+{
+	border: 1px solid #c8c7be;
+	font-size: 11px;
+	width: 162px;
+	font-family: Tahoma;
+	height: 18px;
+	padding-left: 10px;
+}
+.CheckBoxControl
+{
+	border: 1px solid #c8c7be;
+	font-size: 11px;
+	font-family: Tahoma;
+}

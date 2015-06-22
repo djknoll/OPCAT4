@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="UserService" provider="java:EJB">
+		<requestFlow>
+			<handler type="soapmonitor"/>
+		</requestFlow>
+		<responseFlow>
+			<handler type="soapmonitor"/>
+		</responseFlow>
+		<parameter name="beanJndiName" value="UserAccessLocal"/>
+		<parameter name="homeInterfaceName" value="org.objectprocess.session.UserAccessLocalHome"/>
+		<parameter name="remoteInterfaceName" value="org.objectprocess.session.UserAccessLocal"/>
+		<!-- UserAccessBean Exposed methods -->
+		<parameter name="allowedMethods" value="getEnhancedUserByPK
+			 disableUser
+			 enableUser
+			 loginUser 
+			 logoutUser
+			 createUser
+			 updateUser
+			 setUser
+			 getWorkgroupPermissionsForUser
+			 getOpmModelPermissionsForUser
+			 getCollaborativeSessionPermissionsForUser
+			 getUserByPK 
+			 getUserByLoginName"/>
+		<parameter name="jndiURL" value="jnp://localhost:1099"/>
+		<parameter name="jndiContextClass" value="org.jnp.interfaces.NamingContextFactory"/>
+		<parameter name="wsdlTargetNamespace" value="http://localhost:8080/"/>
+		<parameter name="wsdlServiceElement" value="UserService"/>
+		<parameter name="wsdlServicePort" value="UserService"/>
+		<parameter name="wsdlPortType" value="UserAccessLocal"/>
+		<!-- User Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedUserValue" type="java:org.objectprocess.cmp.EnhancedUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UserValue" type="java:org.objectprocess.cmp.UserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableUserValue" type="java:org.objectprocess.cmp.EditableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableUserValue" type="java:org.objectprocess.cmp.UpdatableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Workgroup Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupValue" type="java:org.objectprocess.cmp.WorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupValue" type="java:org.objectprocess.cmp.EditableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableWorkgroupValue" type="java:org.objectprocess.cmp.UpdatableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModel Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelValue" type="java:org.objectprocess.cmp.EnhancedOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelValue" type="java:org.objectprocess.cmp.OpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelValue" type="java:org.objectprocess.cmp.EditableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableOpmModelValue" type="java:org.objectprocess.cmp.UpdatableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelRevisionsValue" type="java:org.objectprocess.cmp.OpmModelRevisionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSession Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionValue" type="java:org.objectprocess.cmp.CollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableCollaborativeSessionValue" type="java:org.objectprocess.cmp.UpdatableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- WorkgroupPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EditableWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModelPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EnhancedOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2OpmModelPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsValue" type="java:org.objectprocess.cmp.OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EditableOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSessionPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Revision Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:MetaRevisionValue" type="java:org.objectprocess.cmp.MetaRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:FullRevisionValue" type="java:org.objectprocess.cmp.FullRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableRevisionValue" type="java:org.objectprocess.cmp.EditableRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Primary Keys Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsPK" type="java:org.objectprocess.cmp.WorkgroupPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsPK" type="java:org.objectprocess.cmp.OpmModelPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsPK" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+     <typeMapping
+       xmlns:ns="http://org/objectprocess/cmp"
+       qname="ns:ArrayOf_MetaRevisionValue"
+       type="java:org.objectprocess.cmp.MetaRevisionValue[]"
+       serializer="org.apache.axis.encoding.ser.ArraySerializerFactory"
+       deserializer="org.apache.axis.encoding.ser.ArrayDeserializerFactory"
+       encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+     />	
+	</service>
+	<service name="WorkgroupService" provider="java:EJB">
+		<requestFlow>
+			<handler type="soapmonitor"/>
+		</requestFlow>
+		<responseFlow>
+			<handler type="soapmonitor"/>
+		</responseFlow>
+		<parameter name="beanJndiName" value="WorkgroupAccessLocal"/>
+		<parameter name="homeInterfaceName" value="org.objectprocess.session.WorkgroupAccessLocalHome"/>
+		<parameter name="remoteInterfaceName" value="org.objectprocess.session.WorkgroupAccessLocal"/>
+		<!-- WorkgroupAccessBean Exposed methods -->
+		<parameter name="allowedMethods" value="createWorkgroup
+				 disableWorkgroup
+				 enableWorkgroup
+				 getEnhancedWorkgroupByPK
+				 getWorkgroupByPK 
+				 updateWorkgroup
+				 setWorkgroupPermissions
+				 getEnhancedWorkgroupPermissionsByPK 
+				 Workgroup"/>
+		<parameter name="jndiURL" value="jnp://localhost:1099"/>
+		<parameter name="jndiContextClass" value="org.jnp.interfaces.NamingContextFactory"/>
+		<parameter name="wsdlTargetNamespace" value="http://localhost:8080/"/>
+		<parameter name="wsdlServiceElement" value="WorkgroupService"/>
+		<parameter name="wsdlServicePort" value="WorkgroupService"/>
+		<parameter name="wsdlPortType" value="WorkgroupAccessLocal"/>
+		<!-- User Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedUserValue" type="java:org.objectprocess.cmp.EnhancedUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UserValue" type="java:org.objectprocess.cmp.UserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableUserValue" type="java:org.objectprocess.cmp.EditableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableUserValue" type="java:org.objectprocess.cmp.UpdatableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Workgroup Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupValue" type="java:org.objectprocess.cmp.WorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupValue" type="java:org.objectprocess.cmp.EditableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableWorkgroupValue" type="java:org.objectprocess.cmp.UpdatableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModel Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelValue" type="java:org.objectprocess.cmp.EnhancedOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelValue" type="java:org.objectprocess.cmp.OpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelValue" type="java:org.objectprocess.cmp.EditableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableOpmModelValue" type="java:org.objectprocess.cmp.UpdatableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelRevisionsValue" type="java:org.objectprocess.cmp.OpmModelRevisionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSession Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionValue" type="java:org.objectprocess.cmp.CollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableCollaborativeSessionValue" type="java:org.objectprocess.cmp.UpdatableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- WorkgroupPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EditableWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModelPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EnhancedOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2OpmModelPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsValue" type="java:org.objectprocess.cmp.OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EditableOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSessionPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Revision Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:MetaRevisionValue" type="java:org.objectprocess.cmp.MetaRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:FullRevisionValue" type="java:org.objectprocess.cmp.FullRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableRevisionValue" type="java:org.objectprocess.cmp.EditableRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Primary Keys Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsPK" type="java:org.objectprocess.cmp.WorkgroupPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsPK" type="java:org.objectprocess.cmp.OpmModelPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsPK" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	<typeMapping
+       xmlns:ns="http://org/objectprocess/cmp"
+       qname="ns:ArrayOf_MetaRevisionValue"
+       type="java:org.objectprocess.cmp.MetaRevisionValue[]"
+       serializer="org.apache.axis.encoding.ser.ArraySerializerFactory"
+       deserializer="org.apache.axis.encoding.ser.ArrayDeserializerFactory"
+       encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+     />	
+	</service>
+	<service name="OpmModelService" provider="java:EJB">
+		<requestFlow>
+			<handler type="soapmonitor"/>
+		</requestFlow>
+		<responseFlow>
+			<handler type="soapmonitor"/>
+		</responseFlow>
+		<parameter name="beanJndiName" value="OpmModelAccessLocal"/>
+		<parameter name="homeInterfaceName" value="org.objectprocess.session.OpmModelAccessLocalHome"/>
+		<parameter name="remoteInterfaceName" value="org.objectprocess.session.OpmModelAccessLocal"/>
+		<!-- OpmModelAccessBean Exposed methods -->
+		<parameter name="allowedMethods" value="createOpmModel
+				 disableOpmModel
+				 enableOpmModel
+				 getPreCommit
+				 getRevisionByPK
+				 getMetaRevisionByPK
+				 getAllRevisions
+				 getEnhancedOpmModelByPK
+				 getOpmModelRevisionsByPK
+				 getOpmModelByPK 
+				 setOpmModelPermissions
+				 getEnhancedOpmModelPermissionsByPK
+				 updateOpmModel"/>
+		<parameter name="jndiURL" value="jnp://localhost:1099"/>
+		<parameter name="jndiContextClass" value="org.jnp.interfaces.NamingContextFactory"/>
+		<parameter name="wsdlTargetNamespace" value="http://localhost:8080/"/>
+		<parameter name="wsdlServiceElement" value="OpmModelService"/>
+		<parameter name="wsdlServicePort" value="OpmModelService"/>
+		<parameter name="wsdlPortType" value="OpmModelAccessLocal"/>
+		<!-- User Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedUserValue" type="java:org.objectprocess.cmp.EnhancedUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UserValue" type="java:org.objectprocess.cmp.UserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableUserValue" type="java:org.objectprocess.cmp.EditableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableUserValue" type="java:org.objectprocess.cmp.UpdatableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Workgroup Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupValue" type="java:org.objectprocess.cmp.WorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupValue" type="java:org.objectprocess.cmp.EditableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableWorkgroupValue" type="java:org.objectprocess.cmp.UpdatableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModel Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelValue" type="java:org.objectprocess.cmp.EnhancedOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelValue" type="java:org.objectprocess.cmp.OpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelValue" type="java:org.objectprocess.cmp.EditableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableOpmModelValue" type="java:org.objectprocess.cmp.UpdatableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelRevisionsValue" type="java:org.objectprocess.cmp.OpmModelRevisionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSession Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionValue" type="java:org.objectprocess.cmp.CollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableCollaborativeSessionValue" type="java:org.objectprocess.cmp.UpdatableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- WorkgroupPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EditableWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModelPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EnhancedOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2OpmModelPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsValue" type="java:org.objectprocess.cmp.OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EditableOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSessionPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Revision Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:MetaRevisionValue" type="java:org.objectprocess.cmp.MetaRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:FullRevisionValue" type="java:org.objectprocess.cmp.FullRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableRevisionValue" type="java:org.objectprocess.cmp.EditableRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Primary Keys Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsPK" type="java:org.objectprocess.cmp.WorkgroupPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsPK" type="java:org.objectprocess.cmp.OpmModelPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsPK" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+     <typeMapping
+       xmlns:ns="http://org/objectprocess/cmp"
+       qname="ns:ArrayOf_MetaRevisionValue"
+       type="java:org.objectprocess.cmp.MetaRevisionValue[]"
+       serializer="org.apache.axis.encoding.ser.ArraySerializerFactory"
+       deserializer="org.apache.axis.encoding.ser.ArrayDeserializerFactory"
+       encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+     />		
+	</service>
+	<service name="CollaborativeSessionService" provider="java:EJB">
+		<requestFlow>
+			<handler type="soapmonitor"/>
+		</requestFlow>
+		<responseFlow>
+			<handler type="soapmonitor"/>
+		</responseFlow>
+		<parameter name="beanJndiName" value="CollaborativeSessionAccessLocal"/>
+		<parameter name="homeInterfaceName" value="org.objectprocess.session.CollaborativeSessionAccessLocalHome"/>
+		<parameter name="remoteInterfaceName" value="org.objectprocess.session.CollaborativeSessionAccessLocal"/>
+		<!-- CollaborativeSessionAccessBean Exposed methods -->
+		<parameter name="allowedMethods" value=
+				"commitCollaborativeSession
+				 createCollaborativeSession 
+				 disableCollaborativeSession
+				 enableCollaborativeSession
+				 sessionLoginUser
+				 sessionLogoutUser
+				 requestToken
+				 returnToken
+				 getEnhancedCollaborativeSessionByPK
+				 getCollaborativeSessionByPK
+				 getCollaborativeSessionFileByPK
+				 setCollaborativeSessionPermissions
+				 getEnhancedCollaborativeSessionPermissionsByPK
+				 updateCollaborativeSessionFile
+				 updateCollaborativeSession
+				 setCollaborativeSession"/>
+		<parameter name="jndiURL" value="jnp://localhost:1099"/>
+		<parameter name="jndiContextClass" value="org.jnp.interfaces.NamingContextFactory"/>
+		<parameter name="wsdlTargetNamespace" value="http://localhost:8080/"/>
+		<parameter name="wsdlServiceElement" value="CollaborativeSessionService"/>
+		<parameter name="wsdlServicePort" value="CollaborativeSessionService"/>
+		<parameter name="wsdlPortType" value="CollaborativeSessionAccessLocal"/>
+		<!-- User Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedUserValue" type="java:org.objectprocess.cmp.EnhancedUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UserValue" type="java:org.objectprocess.cmp.UserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableUserValue" type="java:org.objectprocess.cmp.EditableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableUserValue" type="java:org.objectprocess.cmp.UpdatableUserValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Workgroup Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupValue" type="java:org.objectprocess.cmp.WorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupValue" type="java:org.objectprocess.cmp.EditableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableWorkgroupValue" type="java:org.objectprocess.cmp.UpdatableWorkgroupValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModel Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelValue" type="java:org.objectprocess.cmp.EnhancedOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelValue" type="java:org.objectprocess.cmp.OpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelValue" type="java:org.objectprocess.cmp.EditableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableOpmModelValue" type="java:org.objectprocess.cmp.UpdatableOpmModelValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelRevisionsValue" type="java:org.objectprocess.cmp.OpmModelRevisionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSession Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionValue" type="java:org.objectprocess.cmp.CollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:UpdatableCollaborativeSessionValue" type="java:org.objectprocess.cmp.UpdatableCollaborativeSessionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- WorkgroupPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EnhancedWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsValue" type="java:org.objectprocess.cmp.WorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableWorkgroupPermissionsValue" type="java:org.objectprocess.cmp.EditableWorkgroupPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- OpmModelPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EnhancedOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2OpmModelPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsValue" type="java:org.objectprocess.cmp.OpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableOpmModelPermissionsValue" type="java:org.objectprocess.cmp.EditableOpmModelPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- CollaborativeSessionPermissions Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EnhancedCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EnhancedCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:Enhanced2CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.Enhanced2CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableCollaborativeSessionPermissionsValue" type="java:org.objectprocess.cmp.EditableCollaborativeSessionPermissionsValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionFileValue" type="java:org.objectprocess.cmp.CollaborativeSessionFileValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Revision Value Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:MetaRevisionValue" type="java:org.objectprocess.cmp.MetaRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:FullRevisionValue" type="java:org.objectprocess.cmp.FullRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:EditableRevisionValue" type="java:org.objectprocess.cmp.EditableRevisionValue" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<!-- Primary Keys Objects -->
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:WorkgroupPermissionsPK" type="java:org.objectprocess.cmp.WorkgroupPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:OpmModelPermissionsPK" type="java:org.objectprocess.cmp.OpmModelPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		<typeMapping xmlns:ns="http://org/objectprocess/cmp" qname="ns:CollaborativeSessionPermissionsPK" type="java:org.objectprocess.cmp.CollaborativeSessionPermissionsPK" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+     <typeMapping
+       xmlns:ns="http://org/objectprocess/cmp"
+       qname="ns:ArrayOf_MetaRevisionValue"
+       type="java:org.objectprocess.cmp.MetaRevisionValue[]"
+       serializer="org.apache.axis.encoding.ser.ArraySerializerFactory"
+       deserializer="org.apache.axis.encoding.ser.ArrayDeserializerFactory"
+       encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+     />	
+	</service>
+</deployment>

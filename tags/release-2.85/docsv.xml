@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSV version=1>
+	<field key=1 place=1>
+                <Property key="OPMPath" name="OPMPath">
+                        <value>"c:\programfiles\"</value>
+                </Property>
+	</field>
+	<field key=2 place=2 >
+                <Property key="OPLPath" name="OPLPath">
+                        <value>"c:\programfiles\ ${OPDJPG}"</value>
+                </Property>
+	</field>
+	<field key=3 place=3>
+                <Property key="Class" name="Class">
+                        <value>"${ProcessName}"</value>
+                </Property>
+	</field>
+	<field key=4 place=4>
+                <Property key="Description" name="Description">
+                        <value>"${ProcessDescription}"</value>
+                </Property>
+	</field>
+	<field key=5 place=5>
+                <Property key="Depoposed" name="Depoposed">
+                        <value>"${ProcessParant}"</value>
+                </Property>
+	</field>
+	<field key=6 place=6>
+                <Property key="DecoposedBy" name="DecoposedBy" separator="${newline}">
+                        <value>"${ProcessSons}"</value>
+                </Property>
+	</field>
+</CSV>

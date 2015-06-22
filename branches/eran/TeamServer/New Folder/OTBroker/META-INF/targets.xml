@@ -1,0 +1,4 @@
+<targets>
+	<targetServer>JBOSS 3.2.x</targetServer>
+	<targetServer>JBOSS 3.2.1 ALL</targetServer>
+</targets>

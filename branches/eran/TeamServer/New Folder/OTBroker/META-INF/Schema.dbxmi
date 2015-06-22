@@ -1,0 +1,165 @@
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:RDBSchema="RDBSchema.xmi">
+
+   <RDBSchema:RDBDatabase xmi:id="RDBDatabase_1" name="TopDownDB" tableGroup="RDBTable_1 RDBTable_2">
+      <dataTypeSet href="UDBV7_Primitives.xmi#SQLPrimitives_1"/>
+   </RDBSchema:RDBDatabase>
+
+   <RDBSchema:RDBTable xmi:id="RDBTable_OpmModelPermissions" name="" primaryKey="OpmModelPermissions_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="OpmModelPermissions_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_OpmModelPermissions" constraint="Constraint_OpmModelPermissions_"/>
+
+      <columns xmi:id="OpmModelPermissions_opmModelID" name="opmModelID">
+      </columns>
+      <columns xmi:id="OpmModelPermissions_userID" name="userID">
+      </columns>
+      <columns xmi:id="OpmModelPermissions_joinTime" name="joinTime">
+      </columns>
+      <columns xmi:id="OpmModelPermissions_accessControl" name="accessControl">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_User" name="" primaryKey="User_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="User_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_User" constraint="Constraint_User_"/>
+
+      <columns xmi:id="User_userID" name="userID">
+      </columns>
+      <columns xmi:id="User_loginName" name="loginName">
+      </columns>
+      <columns xmi:id="User_firstName" name="firstName">
+      </columns>
+      <columns xmi:id="User_lastName" name="lastName">
+      </columns>
+      <columns xmi:id="User_password" name="password">
+      </columns>
+      <columns xmi:id="User_email" name="email">
+      </columns>
+      <columns xmi:id="User_enabled" name="enabled">
+      </columns>
+      <columns xmi:id="User_loggedIn" name="loggedIn">
+      </columns>
+      <columns xmi:id="User_lastLoginTime" name="lastLoginTime">
+      </columns>
+      <columns xmi:id="User_description" name="description">
+      </columns>
+      <columns xmi:id="User_administrator" name="administrator">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_Workgroup" name="" primaryKey="Workgroup_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="Workgroup_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_Workgroup" constraint="Constraint_Workgroup_"/>
+
+      <columns xmi:id="Workgroup_workgroupID" name="workgroupID">
+      </columns>
+      <columns xmi:id="Workgroup_workgroupName" name="workgroupName">
+      </columns>
+      <columns xmi:id="Workgroup_enabled" name="enabled">
+      </columns>
+      <columns xmi:id="Workgroup_creationTime" name="creationTime">
+      </columns>
+      <columns xmi:id="Workgroup_description" name="description">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_Revision" name="" primaryKey="Revision_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="Revision_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_Revision" constraint="Constraint_Revision_"/>
+
+      <columns xmi:id="Revision_revisionID" name="revisionID">
+      </columns>
+      <columns xmi:id="Revision_opmModelID" name="opmModelID">
+      </columns>
+      <columns xmi:id="Revision_opmModelFile" name="opmModelFile">
+      </columns>
+      <columns xmi:id="Revision_enabled" name="enabled">
+      </columns>
+      <columns xmi:id="Revision_majorRevision" name="majorRevision">
+      </columns>
+      <columns xmi:id="Revision_minorRevision" name="minorRevision">
+      </columns>
+      <columns xmi:id="Revision_build" name="build">
+      </columns>
+      <columns xmi:id="Revision_creationTime" name="creationTime">
+      </columns>
+      <columns xmi:id="Revision_comitterID" name="comitterID">
+      </columns>
+      <columns xmi:id="Revision_description" name="description">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_CollaborativeSessionPermissions" name="" primaryKey="CollaborativeSessionPermissions_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="CollaborativeSessionPermissions_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_CollaborativeSessionPermissions" constraint="Constraint_CollaborativeSessionPermissions_"/>
+
+      <columns xmi:id="CollaborativeSessionPermissions_collaborativeSessionID" name="collaborativeSessionID">
+      </columns>
+      <columns xmi:id="CollaborativeSessionPermissions_userID" name="userID">
+      </columns>
+      <columns xmi:id="CollaborativeSessionPermissions_joinTime" name="joinTime">
+      </columns>
+      <columns xmi:id="CollaborativeSessionPermissions_accessControl" name="accessControl">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_CollaborativeSession" name="" primaryKey="CollaborativeSession_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="CollaborativeSession_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_CollaborativeSession" constraint="Constraint_CollaborativeSession_"/>
+
+      <columns xmi:id="CollaborativeSession_collaborativeSessionID" name="collaborativeSessionID">
+      </columns>
+      <columns xmi:id="CollaborativeSession_collaborativeSessionName" name="collaborativeSessionName">
+      </columns>
+      <columns xmi:id="CollaborativeSession_enabled" name="enabled">
+      </columns>
+      <columns xmi:id="CollaborativeSession_dirty" name="dirty">
+      </columns>
+      <columns xmi:id="CollaborativeSession_terminated" name="terminated">
+      </columns>
+      <columns xmi:id="CollaborativeSession_creationTime" name="creationTime">
+      </columns>
+      <columns xmi:id="CollaborativeSession_description" name="description">
+      </columns>
+      <columns xmi:id="CollaborativeSession_lastUpdate" name="lastUpdate">
+      </columns>
+      <columns xmi:id="CollaborativeSession_opmModelID" name="opmModelID">
+      </columns>
+      <columns xmi:id="CollaborativeSession_revisionID" name="revisionID">
+      </columns>
+      <columns xmi:id="CollaborativeSession_tokenTimeout" name="tokenTimeout">
+      </columns>
+      <columns xmi:id="CollaborativeSession_userTimeout" name="userTimeout">
+      </columns>
+      <columns xmi:id="CollaborativeSession_tokenHolderID" name="tokenHolderID">
+      </columns>
+      <columns xmi:id="CollaborativeSession_opmModelFile" name="opmModelFile">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_OpmModel" name="" primaryKey="OpmModel_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="OpmModel_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_OpmModel" constraint="Constraint_OpmModel_"/>
+
+      <columns xmi:id="OpmModel_opmModelID" name="opmModelID">
+      </columns>
+      <columns xmi:id="OpmModel_opmModelName" name="opmModelName">
+      </columns>
+      <columns xmi:id="OpmModel_enabled" name="enabled">
+      </columns>
+      <columns xmi:id="OpmModel_creationTime" name="creationTime">
+      </columns>
+      <columns xmi:id="OpmModel_description" name="description">
+      </columns>
+      <columns xmi:id="OpmModel_workgroupID" name="workgroupID">
+      </columns>
+      <columns xmi:id="OpmModel_totalCollaborativeTime" name="totalCollaborativeTime">
+      </columns>
+
+   </RDBSchema:RDBTable>
+   <RDBSchema:RDBTable xmi:id="RDBTable_WorkgroupPermissions" name="" primaryKey="WorkgroupPermissions_PRIMARYKEY" database="RDBDatabase_1">
+      <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="WorkgroupPermissions_PRIMARYKEY" members="------RDBColumn_1" table="RDBTable_WorkgroupPermissions" constraint="Constraint_WorkgroupPermissions_"/>
+
+      <columns xmi:id="WorkgroupPermissions_workgroupID" name="workgroupID">
+      </columns>
+      <columns xmi:id="WorkgroupPermissions_userID" name="userID">
+      </columns>
+      <columns xmi:id="WorkgroupPermissions_joinTime" name="joinTime">
+      </columns>
+      <columns xmi:id="WorkgroupPermissions_accessControl" name="accessControl">
+      </columns>
+
+   </RDBSchema:RDBTable>
+</xmi:XMI>

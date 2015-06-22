@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8080/" xmlns:intf="http://localhost:8080/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://org/objectprocess/cmp" xmlns:tns2="http://authenticate.fault.objectprocess.org" xmlns:tns3="http://lookup.fault.objectprocess.org" xmlns:tns4="http://token.fault.objectprocess.org" xmlns:tns5="http://recursiveDisable.fault.objectprocess.org" xmlns:tns6="http://create.fault.objectprocess.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><wsdl:types><schema targetNamespace="http://org/objectprocess/cmp" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="EditableCollaborativeSessionPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="CollaborativeSessionPermissionsPK"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableCollaborativeSessionPermissionsValue" nillable="true" type="tns1:EditableCollaborativeSessionPermissionsValue"/><complexType name="CollaborativeSessionValue"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="collaborativeSessionName" nillable="true" type="xsd:string"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="lastUpdate" nillable="true" type="xsd:dateTime"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/><element name="terminated" nillable="true" type="xsd:boolean"/><element name="tokenHolderID" nillable="true" type="xsd:string"/><element name="tokenTimeout" nillable="true" type="xsd:int"/><element name="userTimeout" nillable="true" type="xsd:int"/></sequence></complexType><element name="CollaborativeSessionValue" nillable="true" type="tns1:CollaborativeSessionValue"/><complexType name="EnhancedCollaborativeSessionValue"><sequence><element name="addedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="collaborativeSessionName" nillable="true" type="xsd:string"/><element name="collaborativeSessionsPermissions" nillable="true" type="impl:ArrayOf_tns1_Enhanced2CollaborativeSessionPermissionsValue"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="lastUpdate" nillable="true" type="xsd:dateTime"/><element name="onceAddedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="removedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="revisionID" nillable="true" type="xsd:string"/><element name="terminated" nillable="true" type="xsd:boolean"/><element name="tokenHolderID" nillable="true" type="xsd:string"/><element name="tokenTimeout" nillable="true" type="xsd:int"/><element name="updatedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="userTimeout" nillable="true" type="xsd:int"/></sequence></complexType><complexType name="Enhanced2CollaborativeSessionPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><element name="user" nillable="true" type="tns1:UserValue"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="UserValue"><sequence><element name="administrator" nillable="true" type="xsd:boolean"/><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastLoginTime" nillable="true" type="xsd:dateTime"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loggedIn" nillable="true" type="xsd:boolean"/><element name="loginName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedCollaborativeSessionValue" nillable="true" type="tns1:EnhancedCollaborativeSessionValue"/><complexType name="CollaborativeSessionFileValue"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="opmModelFile" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/></sequence></complexType><element name="CollaborativeSessionFileValue" nillable="true" type="tns1:CollaborativeSessionFileValue"/><element name="CollaborativeSessionPermissionsPK" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><complexType name="EnhancedCollaborativeSessionPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="collaborativeSession" nillable="true" type="tns1:CollaborativeSessionValue"/><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedCollaborativeSessionPermissionsValue" nillable="true" type="tns1:EnhancedCollaborativeSessionPermissionsValue"/><complexType name="UpdatableCollaborativeSessionValue"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="collaborativeSessionName" nillable="true" type="xsd:string"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/><element name="tokenTimeout" nillable="true" type="xsd:int"/><element name="userTimeout" nillable="true" type="xsd:int"/></sequence></complexType><element name="UpdatableCollaborativeSessionValue" nillable="true" type="tns1:UpdatableCollaborativeSessionValue"/><complexType name="EditableRevisionValue"><sequence><element name="build" nillable="true" type="xsd:int"/><element name="comitterID" nillable="true" type="xsd:string"/><element name="description" nillable="true" type="xsd:string"/><element name="majorRevision" nillable="true" type="xsd:int"/><element name="minorRevision" nillable="true" type="xsd:int"/><element name="opmModelFile" nillable="true" type="xsd:string"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableRevisionValue" nillable="true" type="tns1:EditableRevisionValue"/><complexType name="EditableCollaborativeSessionValue"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="collaborativeSessionName" nillable="true" type="xsd:string"/><element name="description" nillable="true" type="xsd:string"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/><element name="tokenTimeout" nillable="true" type="xsd:int"/><element name="userTimeout" nillable="true" type="xsd:int"/></sequence></complexType><element name="EditableCollaborativeSessionValue" nillable="true" type="tns1:EditableCollaborativeSessionValue"/></schema><schema targetNamespace="http://authenticate.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="AuthenticationFailedFault"><sequence/></complexType><element name="AuthenticationFailedFault" nillable="true" type="tns2:AuthenticationFailedFault"/></schema><schema targetNamespace="http://lookup.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="LookupFault"><sequence/></complexType><element name="LookupFault" nillable="true" type="tns3:LookupFault"/></schema><schema targetNamespace="http://localhost:8080/" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="ArrayOf_tns1_Enhanced2CollaborativeSessionPermissionsValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Enhanced2CollaborativeSessionPermissionsValue[]"/></restriction></complexContent></complexType></schema><schema targetNamespace="http://token.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="TokenFault"><sequence/></complexType><element name="TokenFault" nillable="true" type="tns4:TokenFault"/></schema><schema targetNamespace="http://recursiveDisable.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="RecursiveDisableFault"><sequence/></complexType><element name="RecursiveDisableFault" nillable="true" type="tns5:RecursiveDisableFault"/></schema><schema targetNamespace="http://create.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="CreationFault"><sequence/></complexType><element name="CreationFault" nillable="true" type="tns6:CreationFault"/></schema></wsdl:types>
+  <wsdl:message name="createCollaborativeSessionRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:EditableCollaborativeSessionValue"/>
+  </wsdl:message>
+  <wsdl:message name="commitCollaborativeSessionResponse">
+    <wsdl:part name="commitCollaborativeSessionReturn" type="tns1:EditableRevisionValue"/>
+  </wsdl:message>
+  <wsdl:message name="enableCollaborativeSessionResponse">
+  </wsdl:message>
+  <wsdl:message name="setCollaborativeSessionPermissionsResponse">
+  </wsdl:message>
+  <wsdl:message name="updateCollaborativeSessionFileResponse">
+  </wsdl:message>
+  <wsdl:message name="AuthenticationFailedFault">
+    <wsdl:part name="fault" type="tns2:AuthenticationFailedFault"/>
+  </wsdl:message>
+  <wsdl:message name="requestTokenRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="updateCollaborativeSessionResponse">
+  </wsdl:message>
+  <wsdl:message name="TokenFault">
+    <wsdl:part name="fault" type="tns4:TokenFault"/>
+  </wsdl:message>
+  <wsdl:message name="updateCollaborativeSessionFileRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:CollaborativeSessionFileValue"/>
+  </wsdl:message>
+  <wsdl:message name="setCollaborativeSessionPermissionsRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:EditableCollaborativeSessionPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="updateCollaborativeSessionRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:UpdatableCollaborativeSessionValue"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedCollaborativeSessionPermissionsByPKResponse">
+    <wsdl:part name="getEnhancedCollaborativeSessionPermissionsByPKReturn" type="tns1:EnhancedCollaborativeSessionPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="LookupFault">
+    <wsdl:part name="fault" type="tns3:LookupFault"/>
+  </wsdl:message>
+  <wsdl:message name="sessionLogoutUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="sessionLoginUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="RecursiveDisableFault">
+    <wsdl:part name="fault" type="tns5:RecursiveDisableFault"/>
+  </wsdl:message>
+  <wsdl:message name="returnTokenRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedCollaborativeSessionByPKResponse">
+    <wsdl:part name="getEnhancedCollaborativeSessionByPKReturn" type="tns1:EnhancedCollaborativeSessionValue"/>
+  </wsdl:message>
+  <wsdl:message name="disableCollaborativeSessionRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+    <wsdl:part name="in3" type="xsd:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="disableCollaborativeSessionResponse">
+  </wsdl:message>
+  <wsdl:message name="getCollaborativeSessionByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="createCollaborativeSessionResponse">
+    <wsdl:part name="createCollaborativeSessionReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getCollaborativeSessionFileByPKResponse">
+    <wsdl:part name="getCollaborativeSessionFileByPKReturn" type="tns1:CollaborativeSessionFileValue"/>
+  </wsdl:message>
+  <wsdl:message name="returnTokenResponse">
+  </wsdl:message>
+  <wsdl:message name="getCollaborativeSessionFileByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="requestTokenResponse">
+  </wsdl:message>
+  <wsdl:message name="getCollaborativeSessionByPKResponse">
+    <wsdl:part name="getCollaborativeSessionByPKReturn" type="tns1:CollaborativeSessionValue"/>
+  </wsdl:message>
+  <wsdl:message name="sessionLoginUserResponse">
+  </wsdl:message>
+  <wsdl:message name="getEnhancedCollaborativeSessionByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedCollaborativeSessionPermissionsByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:CollaborativeSessionPermissionsPK"/>
+  </wsdl:message>
+  <wsdl:message name="sessionLogoutUserResponse">
+  </wsdl:message>
+  <wsdl:message name="enableCollaborativeSessionRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="commitCollaborativeSessionRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+    <wsdl:part name="in3" type="tns1:EditableRevisionValue"/>
+    <wsdl:part name="in4" type="xsd:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="CreationFault">
+    <wsdl:part name="fault" type="tns6:CreationFault"/>
+  </wsdl:message>
+  <wsdl:portType name="CollaborativeSessionAccessLocal">
+    <wsdl:operation name="setCollaborativeSessionPermissions" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:setCollaborativeSessionPermissionsRequest" name="setCollaborativeSessionPermissionsRequest"/>
+      <wsdl:output message="impl:setCollaborativeSessionPermissionsResponse" name="setCollaborativeSessionPermissionsResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCollaborativeSessionByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getCollaborativeSessionByPKRequest" name="getCollaborativeSessionByPKRequest"/>
+      <wsdl:output message="impl:getCollaborativeSessionByPKResponse" name="getCollaborativeSessionByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedCollaborativeSessionByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getEnhancedCollaborativeSessionByPKRequest" name="getEnhancedCollaborativeSessionByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedCollaborativeSessionByPKResponse" name="getEnhancedCollaborativeSessionByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCollaborativeSessionFileByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getCollaborativeSessionFileByPKRequest" name="getCollaborativeSessionFileByPKRequest"/>
+      <wsdl:output message="impl:getCollaborativeSessionFileByPKResponse" name="getCollaborativeSessionFileByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedCollaborativeSessionPermissionsByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getEnhancedCollaborativeSessionPermissionsByPKRequest" name="getEnhancedCollaborativeSessionPermissionsByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedCollaborativeSessionPermissionsByPKResponse" name="getEnhancedCollaborativeSessionPermissionsByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="requestToken" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:requestTokenRequest" name="requestTokenRequest"/>
+      <wsdl:output message="impl:requestTokenResponse" name="requestTokenResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+      <wsdl:fault message="impl:TokenFault" name="TokenFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="returnToken" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:returnTokenRequest" name="returnTokenRequest"/>
+      <wsdl:output message="impl:returnTokenResponse" name="returnTokenResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+      <wsdl:fault message="impl:TokenFault" name="TokenFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCollaborativeSession" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:updateCollaborativeSessionRequest" name="updateCollaborativeSessionRequest"/>
+      <wsdl:output message="impl:updateCollaborativeSessionResponse" name="updateCollaborativeSessionResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCollaborativeSessionFile" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:updateCollaborativeSessionFileRequest" name="updateCollaborativeSessionFileRequest"/>
+      <wsdl:output message="impl:updateCollaborativeSessionFileResponse" name="updateCollaborativeSessionFileResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="disableCollaborativeSession" parameterOrder="in0 in1 in2 in3">
+      <wsdl:input message="impl:disableCollaborativeSessionRequest" name="disableCollaborativeSessionRequest"/>
+      <wsdl:output message="impl:disableCollaborativeSessionResponse" name="disableCollaborativeSessionResponse"/>
+      <wsdl:fault message="impl:RecursiveDisableFault" name="RecursiveDisableFault"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="enableCollaborativeSession" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:enableCollaborativeSessionRequest" name="enableCollaborativeSessionRequest"/>
+      <wsdl:output message="impl:enableCollaborativeSessionResponse" name="enableCollaborativeSessionResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="sessionLoginUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:sessionLoginUserRequest" name="sessionLoginUserRequest"/>
+      <wsdl:output message="impl:sessionLoginUserResponse" name="sessionLoginUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="sessionLogoutUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:sessionLogoutUserRequest" name="sessionLogoutUserRequest"/>
+      <wsdl:output message="impl:sessionLogoutUserResponse" name="sessionLogoutUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="commitCollaborativeSession" parameterOrder="in0 in1 in2 in3 in4">
+      <wsdl:input message="impl:commitCollaborativeSessionRequest" name="commitCollaborativeSessionRequest"/>
+      <wsdl:output message="impl:commitCollaborativeSessionResponse" name="commitCollaborativeSessionResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="createCollaborativeSession" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:createCollaborativeSessionRequest" name="createCollaborativeSessionRequest"/>
+      <wsdl:output message="impl:createCollaborativeSessionResponse" name="createCollaborativeSessionResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+      <wsdl:fault message="impl:CreationFault" name="CreationFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CollaborativeSessionServiceSoapBinding" type="impl:CollaborativeSessionAccessLocal">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setCollaborativeSessionPermissions">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="setCollaborativeSessionPermissionsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="setCollaborativeSessionPermissionsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCollaborativeSessionByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getCollaborativeSessionByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getCollaborativeSessionByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedCollaborativeSessionByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedCollaborativeSessionByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedCollaborativeSessionByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCollaborativeSessionFileByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getCollaborativeSessionFileByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getCollaborativeSessionFileByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedCollaborativeSessionPermissionsByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedCollaborativeSessionPermissionsByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedCollaborativeSessionPermissionsByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestToken">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="requestTokenRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="requestTokenResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returnToken">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="returnTokenRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="returnTokenResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCollaborativeSession">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateCollaborativeSessionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="updateCollaborativeSessionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCollaborativeSessionFile">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateCollaborativeSessionFileRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="updateCollaborativeSessionFileResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableCollaborativeSession">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="disableCollaborativeSessionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="disableCollaborativeSessionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enableCollaborativeSession">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="enableCollaborativeSessionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="enableCollaborativeSessionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sessionLoginUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="sessionLoginUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="sessionLoginUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sessionLogoutUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="sessionLogoutUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="sessionLogoutUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="commitCollaborativeSession">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="commitCollaborativeSessionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="commitCollaborativeSessionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCollaborativeSession">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="createCollaborativeSessionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="createCollaborativeSessionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CollaborativeSessionService">
+    <wsdl:port binding="impl:CollaborativeSessionServiceSoapBinding" name="CollaborativeSessionService">
+      <wsdlsoap:address location="http://127.0.0.1:8080/axis/services/CollaborativeSessionService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

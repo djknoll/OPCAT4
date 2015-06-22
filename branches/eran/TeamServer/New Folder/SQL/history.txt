@@ -1,0 +1,10 @@
+Change log:
+
+28 jul 2004 ::	* As of Schema(1.10) / using GUID strings as primary keys, no new compatible Data script yet.
+
+04 may 2004 ::	* As of Schema(1.09) / Data(1.08) no longer need seperate User Data File.
+		* Added   `ADMINISTRATOR` tinyint(1) NOT NULL,  to user Table
+
+OPCATeam Schema 107
+collaborative session: added revisionID of base revision
+changed order Version control created before collaborative session to obey constraint

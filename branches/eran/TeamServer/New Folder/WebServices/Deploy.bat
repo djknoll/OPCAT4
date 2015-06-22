@@ -1,0 +1,1 @@
+java org.apache.axis.client.AdminClient C:\java\opcaTeam\OpcaTeamServer\WebServices\deploy.wsdd

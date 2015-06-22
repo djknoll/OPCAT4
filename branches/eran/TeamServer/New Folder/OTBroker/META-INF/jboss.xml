@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 3.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_3_0.dtd">
+
+<jboss>
+
+   <unauthenticated-principal>nobody</unauthenticated-principal>
+
+   <enterprise-beans>
+
+     <!--
+       To add beans that you have deployment descriptor info for, add
+       a file to your XDoclet merge directory called jboss-beans.xml that contains
+       the <session></session>, <entity></entity> and <message-driven></message-driven>
+       markup for those beans.
+     -->
+
+      <entity>
+         <ejb-name>OpmModelPermissions</ejb-name>
+         <jndi-name>OpmModelPermissionsBean</jndi-name>
+         <local-jndi-name>OpmModelPermissionsLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>User</ejb-name>
+         <jndi-name>UserBean</jndi-name>
+         <local-jndi-name>UserLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>Workgroup</ejb-name>
+         <jndi-name>WorkgroupBean</jndi-name>
+         <local-jndi-name>WorkgroupLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>Revision</ejb-name>
+         <jndi-name>RevisionBean</jndi-name>
+         <local-jndi-name>RevisionLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>CollaborativeSessionPermissions</ejb-name>
+         <jndi-name>CollaborativeSessionPermissionsBean</jndi-name>
+         <local-jndi-name>CollaborativeSessionPermissionsLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>CollaborativeSession</ejb-name>
+         <jndi-name>CollaborativeSessionBean</jndi-name>
+         <local-jndi-name>CollaborativeSessionLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>OpmModel</ejb-name>
+         <jndi-name>OpmModelBean</jndi-name>
+         <local-jndi-name>OpmModelLocal</local-jndi-name>
+
+      </entity>
+      <entity>
+         <ejb-name>WorkgroupPermissions</ejb-name>
+         <jndi-name>WorkgroupPermissionsBean</jndi-name>
+         <local-jndi-name>WorkgroupPermissionsLocal</local-jndi-name>
+
+      </entity>
+
+      <session>
+         <ejb-name>UserAccess</ejb-name>
+         <jndi-name>UserAccessBean</jndi-name>
+         <local-jndi-name>UserAccessLocal</local-jndi-name>
+         <resource-ref>
+            <res-ref-name>jdbc/DefaultDS</res-ref-name>
+            <jndi-name>java:/DefaultDS</jndi-name>
+         </resource-ref>
+
+      </session>
+      <session>
+         <ejb-name>CollaborativeSessionAccess</ejb-name>
+         <jndi-name>CollaborativeSessionAccessBean</jndi-name>
+         <local-jndi-name>CollaborativeSessionAccessLocal</local-jndi-name>
+         <resource-ref>
+            <res-ref-name>jdbc/DefaultDS</res-ref-name>
+            <jndi-name>java:/DefaultDS</jndi-name>
+         </resource-ref>
+
+      </session>
+      <session>
+         <ejb-name>OpmModelAccess</ejb-name>
+         <jndi-name>OpmModelAccessBean</jndi-name>
+         <local-jndi-name>OpmModelAccessLocal</local-jndi-name>
+         <resource-ref>
+            <res-ref-name>jdbc/DefaultDS</res-ref-name>
+            <jndi-name>java:/DefaultDS</jndi-name>
+         </resource-ref>
+
+      </session>
+      <session>
+         <ejb-name>WorkgroupAccess</ejb-name>
+         <jndi-name>WorkgroupAccessBean</jndi-name>
+         <local-jndi-name>WorkgroupAccessLocal</local-jndi-name>
+         <resource-ref>
+            <res-ref-name>jdbc/DefaultDS</res-ref-name>
+            <jndi-name>java:/DefaultDS</jndi-name>
+         </resource-ref>
+
+      </session>
+
+      <message-driven>
+         <ejb-name>CollaborativeSessionTopic</ejb-name>
+         <destination-jndi-name>topic/collaborativeSessionTopic</destination-jndi-name>
+      </message-driven>
+      <message-driven>
+         <ejb-name>ChatTopic</ejb-name>
+         <destination-jndi-name>topic/chatTopic</destination-jndi-name>
+      </message-driven>
+
+   </enterprise-beans>
+
+   <resource-managers>
+   </resource-managers>
+
+</jboss>

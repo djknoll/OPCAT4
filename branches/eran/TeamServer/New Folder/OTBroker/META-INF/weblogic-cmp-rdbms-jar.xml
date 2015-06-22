@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE weblogic-rdbms-jar PUBLIC "-//BEA Systems, Inc.//DTD WebLogic 6.0.0 EJB RDBMS Persistence//EN" "http://www.bea.com/servers/wls600/dtd/weblogic-rdbms20-persistence-600.dtd">
+
+<weblogic-rdbms-jar>
+   <weblogic-rdbms-bean>
+      <ejb-name>OpmModelPermissions</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>opmmodel_permissions</table-name>
+      <field-map>
+         <cmp-field>opmModelID</cmp-field>
+         <dbms-column>OPMMODELID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>userID</cmp-field>
+         <dbms-column>USERID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>joinTime</cmp-field>
+         <dbms-column>JOINTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>accessControl</cmp-field>
+         <dbms-column>ACCESSCONTROL</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM OpmModelPermissionsSchema as a]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>User</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>user</table-name>
+      <field-map>
+         <cmp-field>userID</cmp-field>
+         <dbms-column>USERID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>loginName</cmp-field>
+         <dbms-column>LOGINNAME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>firstName</cmp-field>
+         <dbms-column>FIRSTNAME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>lastName</cmp-field>
+         <dbms-column>LASTNAME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>password</cmp-field>
+         <dbms-column>PASSWORD</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>email</cmp-field>
+         <dbms-column>EMAIL</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>enabled</cmp-field>
+         <dbms-column>ENABLED</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>loggedIn</cmp-field>
+         <dbms-column>LOGGEDIN</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>lastLoginTime</cmp-field>
+         <dbms-column>LASTLOGINTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>description</cmp-field>
+         <dbms-column>DESCRIPTION</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>administrator</cmp-field>
+         <dbms-column>ADMINISTRATOR</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM UserSchema as a]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByLoginName</method-name>
+            <method-params>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM UserSchema a where a.loginName = ?1]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>Workgroup</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>workgroup</table-name>
+      <field-map>
+         <cmp-field>workgroupID</cmp-field>
+         <dbms-column>WORKGROUPID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>workgroupName</cmp-field>
+         <dbms-column>WORKGROUPNAME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>enabled</cmp-field>
+         <dbms-column>ENABLED</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>creationTime</cmp-field>
+         <dbms-column>CREATIONTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>description</cmp-field>
+         <dbms-column>DESCRIPTION</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM WorkgroupSchema as a]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByWorkgroupName</method-name>
+            <method-params>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM WorkgroupSchema a where a.workgroupName = ?1]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>Revision</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>revision</table-name>
+      <field-map>
+         <cmp-field>revisionID</cmp-field>
+         <dbms-column>REVISIONID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>opmModelID</cmp-field>
+         <dbms-column>OPMMODELID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>opmModelFile</cmp-field>
+         <dbms-column>OPMMODELFILE</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>enabled</cmp-field>
+         <dbms-column>ENABLED</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>majorRevision</cmp-field>
+         <dbms-column>MAJORREVISION</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>minorRevision</cmp-field>
+         <dbms-column>MINORREVISION</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>build</cmp-field>
+         <dbms-column>BUILD</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>creationTime</cmp-field>
+         <dbms-column>CREATIONTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>comitterID</cmp-field>
+         <dbms-column>COMITTERID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>description</cmp-field>
+         <dbms-column>DESCRIPTION</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM RevisionSchema as a]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByCurrentRevision</method-name>
+            <method-params>
+               <method-param>java.lang.Integer</method-param>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM RevisionSchema a where (a.build > ?1 AND a.opmModelID = ?2)]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByRevisionNumber</method-name>
+            <method-params>
+               <method-param>java.lang.Integer</method-param>
+               <method-param>java.lang.Integer</method-param>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM RevisionSchema a where ( a.majorRevision = ?1 AND a.minorRevision = ?2 AND a.opmModelID = ?3) OR (a.opmModelID = ?3 AND a.majorRevision > ?1)]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByOpmModelID</method-name>
+            <method-params>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM RevisionSchema as a where a.opmModelID = ?1]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>CollaborativeSessionPermissions</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>session_permissions</table-name>
+      <field-map>
+         <cmp-field>collaborativeSessionID</cmp-field>
+         <dbms-column>SESSIONID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>userID</cmp-field>
+         <dbms-column>USERID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>joinTime</cmp-field>
+         <dbms-column>JOINTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>accessControl</cmp-field>
+         <dbms-column>ACCESSCONTROL</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM CollaborativeSessionPermissionsSchema as a]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>CollaborativeSession</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>collaborative_session</table-name>
+      <field-map>
+         <cmp-field>collaborativeSessionID</cmp-field>
+         <dbms-column>SESSIONID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>collaborativeSessionName</cmp-field>
+         <dbms-column>SESSIONNAME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>enabled</cmp-field>
+         <dbms-column>ENABLED</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>dirty</cmp-field>
+         <dbms-column>DIRTY</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>terminated</cmp-field>
+         <dbms-column>DONE</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>creationTime</cmp-field>
+         <dbms-column>CREATIONTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>description</cmp-field>
+         <dbms-column>DESCRIPTION</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>lastUpdate</cmp-field>
+         <dbms-column>LASTUPDATE</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>opmModelID</cmp-field>
+         <dbms-column>OPMMODELID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>revisionID</cmp-field>
+         <dbms-column>REVISIONID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>tokenTimeout</cmp-field>
+         <dbms-column>TOKENTIMEOUT</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>userTimeout</cmp-field>
+         <dbms-column>USERTIMEOUT</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>tokenHolderID</cmp-field>
+         <dbms-column>TOKENHOLDERID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>opmModelFile</cmp-field>
+         <dbms-column>OPMMODELFILE</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM CollaborativeSessionSchema as a]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByCollaborativeSessionName</method-name>
+            <method-params>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM CollaborativeSessionSchema a where a.collaborativeSessionName = ?1]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>OpmModel</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>opmmodel</table-name>
+      <field-map>
+         <cmp-field>opmModelID</cmp-field>
+         <dbms-column>OPMMODELID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>opmModelName</cmp-field>
+         <dbms-column>OPMMODELNAME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>enabled</cmp-field>
+         <dbms-column>ENABLED</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>creationTime</cmp-field>
+         <dbms-column>CREATIONTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>description</cmp-field>
+         <dbms-column>DESCRIPTION</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>workgroupID</cmp-field>
+         <dbms-column>WORKGROUPID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>totalCollaborativeTime</cmp-field>
+         <dbms-column>TOTALCOLLABORATIVETIME</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM OpmModelSchema as a]]></weblogic-ql>
+      </weblogic-query>
+      <weblogic-query>
+         <query-method>
+            <method-name>findByOpmModelName</method-name>
+            <method-params>
+               <method-param>java.lang.String</method-param>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM OpmModelSchema a where a.opmModelName = ?1]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+   <weblogic-rdbms-bean>
+      <ejb-name>WorkgroupPermissions</ejb-name>
+      <data-source-name>PLEASE_MODIFY_THIS</data-source-name>
+      <table-name>workgroup_permissions</table-name>
+      <field-map>
+         <cmp-field>workgroupID</cmp-field>
+         <dbms-column>WORKGROUPID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>userID</cmp-field>
+         <dbms-column>USERID</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>joinTime</cmp-field>
+         <dbms-column>JOINTIME</dbms-column>
+      </field-map>
+      <field-map>
+         <cmp-field>accessControl</cmp-field>
+         <dbms-column>ACCESSCONTROL</dbms-column>
+      </field-map>
+
+      <weblogic-query>
+         <query-method>
+            <method-name>findAll</method-name>
+            <method-params>
+            </method-params>
+         </query-method>
+         <weblogic-ql><![CDATA[SELECT OBJECT(a) FROM WorkgroupPermissionsSchema as a]]></weblogic-ql>
+      </weblogic-query>
+
+   </weblogic-rdbms-bean>
+
+   <weblogic-rdbms-relation>
+      <relation-name>WorkgroupPermissions-Workgroup</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>Workgroup-for-WorkgroupPermissions</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>OpmModel-CollaborativeSession</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>CollaborativeSession-in-OpmModel</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>OpmModelPermissions-User</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>User-for-OpmModelPermissions</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>WorkgroupPermissions-User</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>User-for-WorkgroupPermissions</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>OpmModelPermissions-OpmModel</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>OpmModel-for-OpmModelPermissions</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>CollaborativeSessionPermissions-User</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>User-for-CollaborativeSessionPermissions</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>Revisions-OpmModel</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>Revisions-for-OpmModel</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>Workgroup-OpmModel</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>OpmModel-in-Workgroup</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+   <weblogic-rdbms-relation>
+      <relation-name>CollaborativeSessionPermissions-CollaborativeSession</relation-name>
+      <weblogic-relationship-role>
+
+         <relationship-role-name>CollaborativeSession-for-CollaborativeSessionPermissions</relationship-role-name>
+      </weblogic-relationship-role>
+   </weblogic-rdbms-relation>
+     <!-- 
+       To add weblogic relationships for beans not managed by XDoclet, add
+       a file to your XDoclet merge directory called weblogic-cmp-rdbms-relationships.xml that contains
+       the <weblogic-rdbms-relation></weblogic-rdbms-relation> markups for those beans.
+     --> 
+
+   <create-default-dbms-tables>False</create-default-dbms-tables>
+
+</weblogic-rdbms-jar>

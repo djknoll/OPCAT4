@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8080/" xmlns:intf="http://localhost:8080/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://org/objectprocess/cmp" xmlns:tns2="http://authenticate.fault.objectprocess.org" xmlns:tns3="http://lookup.fault.objectprocess.org" xmlns:tns4="http://recursiveDisable.fault.objectprocess.org" xmlns:tns5="http://create.fault.objectprocess.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><wsdl:types><schema targetNamespace="http://org/objectprocess/cmp" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="EditableWorkgroupPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="primaryKey" nillable="true" type="tns1:WorkgroupPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="WorkgroupPermissionsPK"><sequence><element name="userID" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableWorkgroupPermissionsValue" nillable="true" type="tns1:EditableWorkgroupPermissionsValue"/><complexType name="WorkgroupValue"><sequence><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/><element name="workgroupName" nillable="true" type="xsd:string"/></sequence></complexType><element name="WorkgroupValue" nillable="true" type="tns1:WorkgroupValue"/><complexType name="EnhancedWorkgroupValue"><sequence><element name="addedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="onceAddedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="removedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="updatedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="workgroupID" nillable="true" type="xsd:string"/><element name="workgroupName" nillable="true" type="xsd:string"/><element name="workgroupsPermissions" nillable="true" type="impl:ArrayOf_tns1_Enhanced2WorkgroupPermissionsValue"/></sequence></complexType><complexType name="Enhanced2WorkgroupPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:WorkgroupPermissionsPK"/><element name="user" nillable="true" type="tns1:UserValue"/><element name="userID" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="UserValue"><sequence><element name="administrator" nillable="true" type="xsd:boolean"/><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastLoginTime" nillable="true" type="xsd:dateTime"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loggedIn" nillable="true" type="xsd:boolean"/><element name="loginName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedWorkgroupValue" nillable="true" type="tns1:EnhancedWorkgroupValue"/><element name="WorkgroupPermissionsPK" nillable="true" type="tns1:WorkgroupPermissionsPK"/><complexType name="EnhancedWorkgroupPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:WorkgroupPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/><element name="workgroup" nillable="true" type="tns1:WorkgroupValue"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedWorkgroupPermissionsValue" nillable="true" type="tns1:EnhancedWorkgroupPermissionsValue"/><complexType name="UpdatableWorkgroupValue"><sequence><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/><element name="workgroupName" nillable="true" type="xsd:string"/></sequence></complexType><element name="UpdatableWorkgroupValue" nillable="true" type="tns1:UpdatableWorkgroupValue"/><complexType name="EditableWorkgroupValue"><sequence><element name="description" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/><element name="workgroupName" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableWorkgroupValue" nillable="true" type="tns1:EditableWorkgroupValue"/></schema><schema targetNamespace="http://authenticate.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="AuthenticationFailedFault"><sequence/></complexType><element name="AuthenticationFailedFault" nillable="true" type="tns2:AuthenticationFailedFault"/></schema><schema targetNamespace="http://lookup.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="LookupFault"><sequence/></complexType><element name="LookupFault" nillable="true" type="tns3:LookupFault"/></schema><schema targetNamespace="http://localhost:8080/" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="ArrayOf_tns1_Enhanced2WorkgroupPermissionsValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Enhanced2WorkgroupPermissionsValue[]"/></restriction></complexContent></complexType></schema><schema targetNamespace="http://recursiveDisable.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="RecursiveDisableFault"><sequence/></complexType><element name="RecursiveDisableFault" nillable="true" type="tns4:RecursiveDisableFault"/></schema><schema targetNamespace="http://create.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="CreationFault"><sequence/></complexType><element name="CreationFault" nillable="true" type="tns5:CreationFault"/></schema></wsdl:types>
+  <wsdl:message name="enableWorkgroupResponse">
+  </wsdl:message>
+  <wsdl:message name="setWorkgroupPermissionsRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:EditableWorkgroupPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkgroupByPKResponse">
+    <wsdl:part name="getWorkgroupByPKReturn" type="tns1:WorkgroupValue"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedWorkgroupPermissionsByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:WorkgroupPermissionsPK"/>
+  </wsdl:message>
+  <wsdl:message name="createWorkgroupResponse">
+    <wsdl:part name="createWorkgroupReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedWorkgroupByPKResponse">
+    <wsdl:part name="getEnhancedWorkgroupByPKReturn" type="tns1:EnhancedWorkgroupValue"/>
+  </wsdl:message>
+  <wsdl:message name="disableWorkgroupRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+    <wsdl:part name="in3" type="xsd:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="disableWorkgroupResponse">
+  </wsdl:message>
+  <wsdl:message name="AuthenticationFailedFault">
+    <wsdl:part name="fault" type="tns2:AuthenticationFailedFault"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkgroupByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedWorkgroupByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="updateWorkgroupRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:UpdatableWorkgroupValue"/>
+  </wsdl:message>
+  <wsdl:message name="createWorkgroupRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:EditableWorkgroupValue"/>
+  </wsdl:message>
+  <wsdl:message name="updateWorkgroupResponse">
+  </wsdl:message>
+  <wsdl:message name="setWorkgroupPermissionsResponse">
+  </wsdl:message>
+  <wsdl:message name="enableWorkgroupRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+    <wsdl:part name="in3" type="xsd:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="LookupFault">
+    <wsdl:part name="fault" type="tns3:LookupFault"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedWorkgroupPermissionsByPKResponse">
+    <wsdl:part name="getEnhancedWorkgroupPermissionsByPKReturn" type="tns1:EnhancedWorkgroupPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="RecursiveDisableFault">
+    <wsdl:part name="fault" type="tns4:RecursiveDisableFault"/>
+  </wsdl:message>
+  <wsdl:message name="CreationFault">
+    <wsdl:part name="fault" type="tns5:CreationFault"/>
+  </wsdl:message>
+  <wsdl:portType name="WorkgroupAccessLocal">
+    <wsdl:operation name="setWorkgroupPermissions" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:setWorkgroupPermissionsRequest" name="setWorkgroupPermissionsRequest"/>
+      <wsdl:output message="impl:setWorkgroupPermissionsResponse" name="setWorkgroupPermissionsResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkgroupByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getWorkgroupByPKRequest" name="getWorkgroupByPKRequest"/>
+      <wsdl:output message="impl:getWorkgroupByPKResponse" name="getWorkgroupByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedWorkgroupByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getEnhancedWorkgroupByPKRequest" name="getEnhancedWorkgroupByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedWorkgroupByPKResponse" name="getEnhancedWorkgroupByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedWorkgroupPermissionsByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getEnhancedWorkgroupPermissionsByPKRequest" name="getEnhancedWorkgroupPermissionsByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedWorkgroupPermissionsByPKResponse" name="getEnhancedWorkgroupPermissionsByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWorkgroup" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:updateWorkgroupRequest" name="updateWorkgroupRequest"/>
+      <wsdl:output message="impl:updateWorkgroupResponse" name="updateWorkgroupResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="disableWorkgroup" parameterOrder="in0 in1 in2 in3">
+      <wsdl:input message="impl:disableWorkgroupRequest" name="disableWorkgroupRequest"/>
+      <wsdl:output message="impl:disableWorkgroupResponse" name="disableWorkgroupResponse"/>
+      <wsdl:fault message="impl:RecursiveDisableFault" name="RecursiveDisableFault"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="enableWorkgroup" parameterOrder="in0 in1 in2 in3">
+      <wsdl:input message="impl:enableWorkgroupRequest" name="enableWorkgroupRequest"/>
+      <wsdl:output message="impl:enableWorkgroupResponse" name="enableWorkgroupResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="createWorkgroup" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:createWorkgroupRequest" name="createWorkgroupRequest"/>
+      <wsdl:output message="impl:createWorkgroupResponse" name="createWorkgroupResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+      <wsdl:fault message="impl:CreationFault" name="CreationFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkgroupServiceSoapBinding" type="impl:WorkgroupAccessLocal">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setWorkgroupPermissions">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="setWorkgroupPermissionsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="setWorkgroupPermissionsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkgroupByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getWorkgroupByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getWorkgroupByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedWorkgroupByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedWorkgroupByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedWorkgroupByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedWorkgroupPermissionsByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedWorkgroupPermissionsByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedWorkgroupPermissionsByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWorkgroup">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateWorkgroupRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="updateWorkgroupResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableWorkgroup">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="disableWorkgroupRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="disableWorkgroupResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enableWorkgroup">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="enableWorkgroupRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="enableWorkgroupResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createWorkgroup">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="createWorkgroupRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="createWorkgroupResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkgroupService">
+    <wsdl:port binding="impl:WorkgroupServiceSoapBinding" name="WorkgroupService">
+      <wsdlsoap:address location="http://127.0.0.1:8080/axis/services/WorkgroupService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

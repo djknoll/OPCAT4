@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jbosscmp-jdbc PUBLIC "-//JBoss//DTD JBOSSCMP-JDBC 3.0//EN" "http://www.jboss.org/j2ee/dtd/jbosscmp-jdbc_3_0.dtd">
+
+<jbosscmp-jdbc>
+   <defaults>
+     <datasource>java:/DefaultDS</datasource>
+     <datasource-mapping>mySQL</datasource-mapping>
+     <preferred-relation-mapping>foreign-key</preferred-relation-mapping>
+   </defaults>
+
+   <enterprise-beans>
+
+     <!--
+       To add beans that you have deployment descriptor info for, add
+       a file to your XDoclet merge directory called jbosscmp-jdbc-beans.xml
+       that contains the <entity></entity> markup for those beans.
+     -->
+
+      <entity>
+         <ejb-name>OpmModelPermissions</ejb-name>
+
+         <table-name>opmmodel_permissions</table-name>
+
+         <cmp-field>
+            <field-name>opmModelID</field-name>
+            <column-name>OPMMODELID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>userID</field-name>
+            <column-name>USERID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>joinTime</field-name>
+            <column-name>JOINTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>accessControl</field-name>
+            <column-name>ACCESSCONTROL</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>User</ejb-name>
+
+         <table-name>user</table-name>
+
+         <cmp-field>
+            <field-name>userID</field-name>
+            <column-name>USERID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>loginName</field-name>
+            <column-name>LOGINNAME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>firstName</field-name>
+            <column-name>FIRSTNAME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>lastName</field-name>
+            <column-name>LASTNAME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>password</field-name>
+            <column-name>PASSWORD</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>email</field-name>
+            <column-name>EMAIL</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>enabled</field-name>
+            <column-name>ENABLED</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>loggedIn</field-name>
+            <column-name>LOGGEDIN</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>lastLoginTime</field-name>
+            <column-name>LASTLOGINTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>description</field-name>
+            <column-name>DESCRIPTION</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>administrator</field-name>
+            <column-name>ADMINISTRATOR</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>Workgroup</ejb-name>
+
+         <table-name>workgroup</table-name>
+
+         <cmp-field>
+            <field-name>workgroupID</field-name>
+            <column-name>WORKGROUPID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>workgroupName</field-name>
+            <column-name>WORKGROUPNAME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>enabled</field-name>
+            <column-name>ENABLED</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>creationTime</field-name>
+            <column-name>CREATIONTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>description</field-name>
+            <column-name>DESCRIPTION</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>Revision</ejb-name>
+
+         <table-name>revision</table-name>
+
+         <cmp-field>
+            <field-name>revisionID</field-name>
+            <column-name>REVISIONID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>opmModelID</field-name>
+            <column-name>OPMMODELID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>opmModelFile</field-name>
+            <column-name>OPMMODELFILE</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>enabled</field-name>
+            <column-name>ENABLED</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>majorRevision</field-name>
+            <column-name>MAJORREVISION</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>minorRevision</field-name>
+            <column-name>MINORREVISION</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>build</field-name>
+            <column-name>BUILD</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>creationTime</field-name>
+            <column-name>CREATIONTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>comitterID</field-name>
+            <column-name>COMITTERID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>description</field-name>
+            <column-name>DESCRIPTION</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>CollaborativeSessionPermissions</ejb-name>
+
+         <table-name>session_permissions</table-name>
+
+         <cmp-field>
+            <field-name>collaborativeSessionID</field-name>
+            <column-name>SESSIONID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>userID</field-name>
+            <column-name>USERID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>joinTime</field-name>
+            <column-name>JOINTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>accessControl</field-name>
+            <column-name>ACCESSCONTROL</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>CollaborativeSession</ejb-name>
+
+         <table-name>collaborative_session</table-name>
+
+         <cmp-field>
+            <field-name>collaborativeSessionID</field-name>
+            <column-name>SESSIONID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>collaborativeSessionName</field-name>
+            <column-name>SESSIONNAME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>enabled</field-name>
+            <column-name>ENABLED</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>dirty</field-name>
+            <column-name>DIRTY</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>terminated</field-name>
+            <column-name>DONE</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>creationTime</field-name>
+            <column-name>CREATIONTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>description</field-name>
+            <column-name>DESCRIPTION</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>lastUpdate</field-name>
+            <column-name>LASTUPDATE</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>opmModelID</field-name>
+            <column-name>OPMMODELID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>revisionID</field-name>
+            <column-name>REVISIONID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>tokenTimeout</field-name>
+            <column-name>TOKENTIMEOUT</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>userTimeout</field-name>
+            <column-name>USERTIMEOUT</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>tokenHolderID</field-name>
+            <column-name>TOKENHOLDERID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>opmModelFile</field-name>
+            <column-name>OPMMODELFILE</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>OpmModel</ejb-name>
+
+         <table-name>opmmodel</table-name>
+
+         <cmp-field>
+            <field-name>opmModelID</field-name>
+            <column-name>OPMMODELID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>opmModelName</field-name>
+            <column-name>OPMMODELNAME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>enabled</field-name>
+            <column-name>ENABLED</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>creationTime</field-name>
+            <column-name>CREATIONTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>description</field-name>
+            <column-name>DESCRIPTION</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>workgroupID</field-name>
+            <column-name>WORKGROUPID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>totalCollaborativeTime</field-name>
+            <column-name>TOTALCOLLABORATIVETIME</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+      <entity>
+         <ejb-name>WorkgroupPermissions</ejb-name>
+
+         <table-name>workgroup_permissions</table-name>
+
+         <cmp-field>
+            <field-name>workgroupID</field-name>
+            <column-name>WORKGROUPID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>userID</field-name>
+            <column-name>USERID</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>joinTime</field-name>
+            <column-name>JOINTIME</column-name>
+
+        </cmp-field>
+         <cmp-field>
+            <field-name>accessControl</field-name>
+            <column-name>ACCESSCONTROL</column-name>
+
+        </cmp-field>
+
+      </entity>
+
+   </enterprise-beans>
+
+  <relationships>
+    <ejb-relation>
+      <ejb-relation-name>WorkgroupPermissions-Workgroup</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>Workgroup-for-WorkgroupPermissions</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>Workgroup-has-WorkgroupPermissions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>workgroupID</field-name>
+               <column-name>WORKGROUPID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>OpmModel-CollaborativeSession</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>CollaborativeSession-in-OpmModel</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>OpmModel-has-CollaborativeSession</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>opmModelID</field-name>
+               <column-name>OPMMODELID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>OpmModelPermissions-User</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>User-for-OpmModelPermissions</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>user-has-OpmModelPermissions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>userID</field-name>
+               <column-name>USERID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>WorkgroupPermissions-User</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>User-for-WorkgroupPermissions</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>user-has-WorkgroupPermissions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>userID</field-name>
+               <column-name>USERID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>OpmModelPermissions-OpmModel</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>OpmModel-for-OpmModelPermissions</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>OpmModel-has-OpmModelPermissions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>opmModelID</field-name>
+               <column-name>OPMMODELID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>CollaborativeSessionPermissions-User</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>User-for-CollaborativeSessionPermissions</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>User-has-CollaborativeSessionPermissions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>userID</field-name>
+               <column-name>USERID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>Revisions-OpmModel</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>Revisions-for-OpmModel</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>OpmModel-has-Revisions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>opmModelID</field-name>
+               <column-name>OPMMODELID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>Workgroup-OpmModel</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>OpmModel-in-Workgroup</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>Workgroup-has-OpmModel</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>workgroupID</field-name>
+               <column-name>WORKGROUPID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+    <ejb-relation>
+      <ejb-relation-name>CollaborativeSessionPermissions-CollaborativeSession</ejb-relation-name>
+
+      <foreign-key-mapping/>
+
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>CollaborativeSession-for-CollaborativeSessionPermissions</ejb-relationship-role-name>
+		  <key-fields/>
+
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+          <ejb-relationship-role-name>CollaborativeSession-has-CollaborativeSessionPermissions</ejb-relationship-role-name>
+          <key-fields>
+             <key-field>
+               <field-name>collaborativeSessionID</field-name>
+               <column-name>SESSIONID</column-name>
+             </key-field>
+          </key-fields>
+
+      </ejb-relationship-role>
+    </ejb-relation>
+     <!-- 
+       To add jboss relationships for beans not managed by XDoclet, add
+       a file to your XDoclet merge directory called jbosscmp-jdbc-relationships.xml that contains
+       the <ejb-relation></ejb-relation> markups for those beans.
+     --> 
+  </relationships>
+
+</jbosscmp-jdbc>

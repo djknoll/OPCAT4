@@ -1,0 +1,39 @@
+
+OPCAT Inc.
+
+----------------------------------------
+What's New In OPCAT Version Version 2.75
+----------------------------------------
+NEW - Description field in objects
+NEW - Cut and Paste - The CUT Or Copy in OPCAT II does not check the validity of the new 
+model created by this edit operation, validity checks are planned in future releases. 
+
+Bug fixes
+---------
+BUG - Import faster by 80%.
+BUG - Import changes the imported project graphics layout.
+BUG - Copy does not work correctly with Keyboard.
+BUG - URL invocation with empty string. 
+BUG – Caps in first letters of the URL string. 
+BUG - Import saves imported file without warnning after import. 
+
+CHANGED - removal of the index page from objects
+CHANGED - description tab name changed to detail. 
+CHANGED - black reuse was removed.
+CHANGED - import help. 
+CHANGED - internal behavior of menu and mouse actions to be faster and safer.
+
+
+----------------------------------------
+What's New In OPCAT Version Version 2.74
+----------------------------------------
+NEW - URL feature to objects and process - The URL is entered in the URL textbox at the details tag of the thing properties dialog. 
+When the mouse is dragged on a Thing which has a URL defined the border color changes to red and a tooltip "Control-LeftMouse" appears.
+In Order to activate the URL, press Control+Left Mousr button. 
+
+
+
+----------------------------------------
+What's New In OPCAT Version Version 2.73
+----------------------------------------
+Initial Commercial release. 

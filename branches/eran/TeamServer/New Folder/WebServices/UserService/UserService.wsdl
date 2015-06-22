@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8080/" xmlns:intf="http://localhost:8080/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://org/objectprocess/cmp" xmlns:tns2="http://authenticate.fault.objectprocess.org" xmlns:tns3="http://lookup.fault.objectprocess.org" xmlns:tns4="http://create.fault.objectprocess.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><wsdl:types><schema targetNamespace="http://org/objectprocess/cmp" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="WorkgroupPermissionsPK"><sequence><element name="userID" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><element name="WorkgroupPermissionsPK" nillable="true" type="tns1:WorkgroupPermissionsPK"/><complexType name="WorkgroupPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:WorkgroupPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><element name="WorkgroupPermissionsValue" nillable="true" type="tns1:WorkgroupPermissionsValue"/><complexType name="OpmModelPermissionsPK"><sequence><element name="opmModelID" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="OpmModelPermissionsPK" nillable="true" type="tns1:OpmModelPermissionsPK"/><complexType name="OpmModelPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="tns1:OpmModelPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="OpmModelPermissionsValue" nillable="true" type="tns1:OpmModelPermissionsValue"/><complexType name="CollaborativeSessionPermissionsPK"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="CollaborativeSessionPermissionsPK" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><complexType name="CollaborativeSessionPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="CollaborativeSessionPermissionsValue" nillable="true" type="tns1:CollaborativeSessionPermissionsValue"/><complexType name="EnhancedUserValue"><sequence><element name="addedEnhancedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="addedEnhancedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="addedEnhancedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="administrator" nillable="true" type="xsd:boolean"/><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="enhancedCollaborativeSessionsPermissions" nillable="true" type="impl:ArrayOf_tns1_EnhancedCollaborativeSessionPermissionsValue"/><element name="enhancedOpmModelsPermissions" nillable="true" type="impl:ArrayOf_tns1_EnhancedOpmModelPermissionsValue"/><element name="enhancedWorkgroupsPermissions" nillable="true" type="impl:ArrayOf_tns1_EnhancedWorkgroupPermissionsValue"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastLoginTime" nillable="true" type="xsd:dateTime"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loggedIn" nillable="true" type="xsd:boolean"/><element name="loginName" nillable="true" type="xsd:string"/><element name="onceAddedEnhancedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="onceAddedEnhancedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="onceAddedEnhancedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="password" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="removedEnhancedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="removedEnhancedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="removedEnhancedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="updatedEnhancedCollaborativeSessionsPermissions" nillable="true" type="soapenc:Array"/><element name="updatedEnhancedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="updatedEnhancedWorkgroupsPermissions" nillable="true" type="soapenc:Array"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="EnhancedCollaborativeSessionPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="collaborativeSession" nillable="true" type="tns1:CollaborativeSessionValue"/><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:CollaborativeSessionPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="CollaborativeSessionValue"><sequence><element name="collaborativeSessionID" nillable="true" type="xsd:string"/><element name="collaborativeSessionName" nillable="true" type="xsd:string"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="lastUpdate" nillable="true" type="xsd:dateTime"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/><element name="terminated" nillable="true" type="xsd:boolean"/><element name="tokenHolderID" nillable="true" type="xsd:string"/><element name="tokenTimeout" nillable="true" type="xsd:int"/><element name="userTimeout" nillable="true" type="xsd:int"/></sequence></complexType><complexType name="EnhancedOpmModelPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="opmModel" nillable="true" type="tns1:OpmModelValue"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="tns1:OpmModelPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="OpmModelValue"><sequence><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="opmModelName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="totalCollaborativeTime" nillable="true" type="xsd:int"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="EnhancedWorkgroupPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="primaryKey" nillable="true" type="tns1:WorkgroupPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/><element name="workgroup" nillable="true" type="tns1:WorkgroupValue"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="WorkgroupValue"><sequence><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/><element name="workgroupName" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedUserValue" nillable="true" type="tns1:EnhancedUserValue"/><complexType name="UserValue"><sequence><element name="administrator" nillable="true" type="xsd:boolean"/><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastLoginTime" nillable="true" type="xsd:dateTime"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loggedIn" nillable="true" type="xsd:boolean"/><element name="loginName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="UserValue" nillable="true" type="tns1:UserValue"/><complexType name="UpdatableUserValue"><sequence><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loginName" nillable="true" type="xsd:string"/><element name="password" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="UpdatableUserValue" nillable="true" type="tns1:UpdatableUserValue"/><complexType name="EditableUserValue"><sequence><element name="administrator" nillable="true" type="xsd:boolean"/><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loginName" nillable="true" type="xsd:string"/><element name="password" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableUserValue" nillable="true" type="tns1:EditableUserValue"/></schema><schema targetNamespace="http://authenticate.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="AuthenticationFailedFault"><sequence/></complexType><element name="AuthenticationFailedFault" nillable="true" type="tns2:AuthenticationFailedFault"/></schema><schema targetNamespace="http://lookup.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="LookupFault"><sequence/></complexType><element name="LookupFault" nillable="true" type="tns3:LookupFault"/></schema><schema targetNamespace="http://localhost:8080/" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="ArrayOf_tns1_EnhancedCollaborativeSessionPermissionsValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:EnhancedCollaborativeSessionPermissionsValue[]"/></restriction></complexContent></complexType><complexType name="ArrayOf_tns1_EnhancedOpmModelPermissionsValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:EnhancedOpmModelPermissionsValue[]"/></restriction></complexContent></complexType><complexType name="ArrayOf_tns1_EnhancedWorkgroupPermissionsValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:EnhancedWorkgroupPermissionsValue[]"/></restriction></complexContent></complexType></schema><schema targetNamespace="http://create.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="CreationFault"><sequence/></complexType><element name="CreationFault" nillable="true" type="tns4:CreationFault"/></schema></wsdl:types>
+  <wsdl:message name="getUserByLoginNameRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getCollaborativeSessionPermissionsForUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:CollaborativeSessionPermissionsPK"/>
+  </wsdl:message>
+  <wsdl:message name="AuthenticationFailedFault">
+    <wsdl:part name="fault" type="tns2:AuthenticationFailedFault"/>
+  </wsdl:message>
+  <wsdl:message name="getUserByPKResponse">
+    <wsdl:part name="getUserByPKReturn" type="tns1:UserValue"/>
+  </wsdl:message>
+  <wsdl:message name="disableUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedUserByPKResponse">
+    <wsdl:part name="getEnhancedUserByPKReturn" type="tns1:EnhancedUserValue"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkgroupPermissionsForUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:WorkgroupPermissionsPK"/>
+  </wsdl:message>
+  <wsdl:message name="enableUserResponse">
+  </wsdl:message>
+  <wsdl:message name="createUserResponse">
+    <wsdl:part name="createUserReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="loginUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getOpmModelPermissionsForUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:OpmModelPermissionsPK"/>
+  </wsdl:message>
+  <wsdl:message name="LookupFault">
+    <wsdl:part name="fault" type="tns3:LookupFault"/>
+  </wsdl:message>
+  <wsdl:message name="getUserByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getOpmModelPermissionsForUserResponse">
+    <wsdl:part name="getOpmModelPermissionsForUserReturn" type="tns1:OpmModelPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="createUserRequest">
+    <wsdl:part name="in0" type="tns1:EditableUserValue"/>
+  </wsdl:message>
+  <wsdl:message name="disableUserResponse">
+  </wsdl:message>
+  <wsdl:message name="getUserByLoginNameResponse">
+    <wsdl:part name="getUserByLoginNameReturn" type="tns1:UserValue"/>
+  </wsdl:message>
+  <wsdl:message name="getCollaborativeSessionPermissionsForUserResponse">
+    <wsdl:part name="getCollaborativeSessionPermissionsForUserReturn" type="tns1:CollaborativeSessionPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedUserByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="logoutUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="enableUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="loginUserResponse">
+    <wsdl:part name="loginUserReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getWorkgroupPermissionsForUserResponse">
+    <wsdl:part name="getWorkgroupPermissionsForUserReturn" type="tns1:WorkgroupPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="updateUserResponse">
+  </wsdl:message>
+  <wsdl:message name="updateUserRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:UpdatableUserValue"/>
+  </wsdl:message>
+  <wsdl:message name="logoutUserResponse">
+  </wsdl:message>
+  <wsdl:message name="CreationFault">
+    <wsdl:part name="fault" type="tns4:CreationFault"/>
+  </wsdl:message>
+  <wsdl:portType name="UserAccessLocal">
+    <wsdl:operation name="getWorkgroupPermissionsForUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getWorkgroupPermissionsForUserRequest" name="getWorkgroupPermissionsForUserRequest"/>
+      <wsdl:output message="impl:getWorkgroupPermissionsForUserResponse" name="getWorkgroupPermissionsForUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getOpmModelPermissionsForUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getOpmModelPermissionsForUserRequest" name="getOpmModelPermissionsForUserRequest"/>
+      <wsdl:output message="impl:getOpmModelPermissionsForUserResponse" name="getOpmModelPermissionsForUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCollaborativeSessionPermissionsForUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getCollaborativeSessionPermissionsForUserRequest" name="getCollaborativeSessionPermissionsForUserRequest"/>
+      <wsdl:output message="impl:getCollaborativeSessionPermissionsForUserResponse" name="getCollaborativeSessionPermissionsForUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="loginUser" parameterOrder="in0 in1">
+      <wsdl:input message="impl:loginUserRequest" name="loginUserRequest"/>
+      <wsdl:output message="impl:loginUserResponse" name="loginUserResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="logoutUser" parameterOrder="in0 in1">
+      <wsdl:input message="impl:logoutUserRequest" name="logoutUserRequest"/>
+      <wsdl:output message="impl:logoutUserResponse" name="logoutUserResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedUserByPK" parameterOrder="in0 in1">
+      <wsdl:input message="impl:getEnhancedUserByPKRequest" name="getEnhancedUserByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedUserByPKResponse" name="getEnhancedUserByPKResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUserByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getUserByPKRequest" name="getUserByPKRequest"/>
+      <wsdl:output message="impl:getUserByPKResponse" name="getUserByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUserByLoginName" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getUserByLoginNameRequest" name="getUserByLoginNameRequest"/>
+      <wsdl:output message="impl:getUserByLoginNameResponse" name="getUserByLoginNameResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:updateUserRequest" name="updateUserRequest"/>
+      <wsdl:output message="impl:updateUserResponse" name="updateUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="disableUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:disableUserRequest" name="disableUserRequest"/>
+      <wsdl:output message="impl:disableUserResponse" name="disableUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="enableUser" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:enableUserRequest" name="enableUserRequest"/>
+      <wsdl:output message="impl:enableUserResponse" name="enableUserResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="createUser" parameterOrder="in0">
+      <wsdl:input message="impl:createUserRequest" name="createUserRequest"/>
+      <wsdl:output message="impl:createUserResponse" name="createUserResponse"/>
+      <wsdl:fault message="impl:CreationFault" name="CreationFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserServiceSoapBinding" type="impl:UserAccessLocal">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getWorkgroupPermissionsForUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getWorkgroupPermissionsForUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getWorkgroupPermissionsForUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpmModelPermissionsForUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getOpmModelPermissionsForUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getOpmModelPermissionsForUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCollaborativeSessionPermissionsForUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getCollaborativeSessionPermissionsForUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getCollaborativeSessionPermissionsForUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="loginUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="loginUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logoutUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="logoutUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="logoutUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedUserByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedUserByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedUserByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getUserByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserByLoginName">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserByLoginNameRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getUserByLoginNameResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="updateUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="disableUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="disableUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enableUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="enableUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="enableUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="createUserRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="createUserResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService">
+    <wsdl:port binding="impl:UserServiceSoapBinding" name="UserService">
+      <wsdlsoap:address location="http://127.0.0.1:8080/axis/services/UserService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

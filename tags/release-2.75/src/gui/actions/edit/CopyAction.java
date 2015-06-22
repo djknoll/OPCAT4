@@ -1,0 +1,37 @@
+package gui.actions.edit;
+
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+
+import org.w3c.dom.events.EventException;
+
+/**
+ * Carries out a copy operation. 
+ * @author Eran Toch
+ */
+public class CopyAction extends EditAction {
+
+    /**
+     * @param name
+     * @param icon
+     */
+    public CopyAction(String name, Icon icon) {
+        super(name, icon);
+    }
+
+    /* (non-Javadoc)
+     * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+     */
+    public void actionPerformed(ActionEvent arg0) {
+    	try {
+    		super.actionPerformed(arg0);
+    	} catch (EventException e ) {
+    		 JOptionPane.showMessageDialog(gui.getFrame(), e.getMessage().toString(), "Message", JOptionPane.ERROR_MESSAGE);
+    		 return;    		
+    	}
+        edit.getCurrentProject().copy();
+    }
+}

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8080/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8080/" xmlns:intf="http://localhost:8080/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://org/objectprocess/cmp" xmlns:tns2="http://authenticate.fault.objectprocess.org" xmlns:tns3="http://lookup.fault.objectprocess.org" xmlns:tns4="http://recursiveDisable.fault.objectprocess.org" xmlns:tns5="http://create.fault.objectprocess.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><wsdl:types><schema targetNamespace="http://org/objectprocess/cmp" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="EditableOpmModelPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="tns1:OpmModelPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="OpmModelPermissionsPK"><sequence><element name="opmModelID" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableOpmModelPermissionsValue" nillable="true" type="tns1:EditableOpmModelPermissionsValue"/><complexType name="OpmModelValue"><sequence><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="opmModelName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="totalCollaborativeTime" nillable="true" type="xsd:int"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><element name="OpmModelValue" nillable="true" type="tns1:OpmModelValue"/><complexType name="EnhancedOpmModelValue"><sequence><element name="addedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="onceAddedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="opmModelName" nillable="true" type="xsd:string"/><element name="opmModelsPermissions" nillable="true" type="impl:ArrayOf_tns1_Enhanced2OpmModelPermissionsValue"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="removedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="totalCollaborativeTime" nillable="true" type="xsd:int"/><element name="updatedOpmModelsPermissions" nillable="true" type="soapenc:Array"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="Enhanced2OpmModelPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="tns1:OpmModelPermissionsPK"/><element name="user" nillable="true" type="tns1:UserValue"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="UserValue"><sequence><element name="administrator" nillable="true" type="xsd:boolean"/><element name="description" nillable="true" type="xsd:string"/><element name="email" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="firstName" nillable="true" type="xsd:string"/><element name="lastLoginTime" nillable="true" type="xsd:dateTime"/><element name="lastName" nillable="true" type="xsd:string"/><element name="loggedIn" nillable="true" type="xsd:boolean"/><element name="loginName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedOpmModelValue" nillable="true" type="tns1:EnhancedOpmModelValue"/><complexType name="OpmModelRevisionsValue"><sequence><element name="addedOpmModelRevisions" nillable="true" type="soapenc:Array"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="onceAddedOpmModelRevisions" nillable="true" type="soapenc:Array"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="opmModelName" nillable="true" type="xsd:string"/><element name="opmModelRevisions" nillable="true" type="tns1:ArrayOf_MetaRevisionValue"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="removedOpmModelRevisions" nillable="true" type="soapenc:Array"/><element name="totalCollaborativeTime" nillable="true" type="xsd:int"/><element name="updatedOpmModelRevisions" nillable="true" type="soapenc:Array"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="MetaRevisionValue"><sequence><element name="build" nillable="true" type="xsd:int"/><element name="comitterID" nillable="true" type="xsd:string"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="majorRevision" nillable="true" type="xsd:int"/><element name="minorRevision" nillable="true" type="xsd:int"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="ArrayOf_MetaRevisionValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:MetaRevisionValue[]"/></restriction></complexContent></complexType><element name="OpmModelRevisionsValue" nillable="true" type="tns1:OpmModelRevisionsValue"/><element name="MetaRevisionValue" nillable="true" type="tns1:MetaRevisionValue"/><complexType name="FullRevisionValue"><sequence><element name="build" nillable="true" type="xsd:int"/><element name="comitterID" nillable="true" type="xsd:string"/><element name="creationTime" nillable="true" type="xsd:dateTime"/><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="majorRevision" nillable="true" type="xsd:int"/><element name="minorRevision" nillable="true" type="xsd:int"/><element name="opmModel" nillable="true" type="tns1:OpmModelValue"/><element name="opmModelFile" nillable="true" type="xsd:string"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="revisionID" nillable="true" type="xsd:string"/></sequence></complexType><element name="FullRevisionValue" nillable="true" type="tns1:FullRevisionValue"/><element name="OpmModelPermissionsPK" nillable="true" type="tns1:OpmModelPermissionsPK"/><complexType name="EnhancedOpmModelPermissionsValue"><sequence><element name="accessControl" nillable="true" type="xsd:int"/><element name="joinTime" nillable="true" type="xsd:dateTime"/><element name="opmModel" nillable="true" type="tns1:OpmModelValue"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="tns1:OpmModelPermissionsPK"/><element name="userID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EnhancedOpmModelPermissionsValue" nillable="true" type="tns1:EnhancedOpmModelPermissionsValue"/><complexType name="UpdatableOpmModelValue"><sequence><element name="description" nillable="true" type="xsd:string"/><element name="enabled" nillable="true" type="xsd:boolean"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="opmModelName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/></sequence></complexType><element name="UpdatableOpmModelValue" nillable="true" type="tns1:UpdatableOpmModelValue"/><complexType name="EditableOpmModelValue"><sequence><element name="description" nillable="true" type="xsd:string"/><element name="opmModelID" nillable="true" type="xsd:string"/><element name="opmModelName" nillable="true" type="xsd:string"/><element name="primaryKey" nillable="true" type="xsd:string"/><element name="workgroupID" nillable="true" type="xsd:string"/></sequence></complexType><element name="EditableOpmModelValue" nillable="true" type="tns1:EditableOpmModelValue"/></schema><schema targetNamespace="http://authenticate.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="AuthenticationFailedFault"><sequence/></complexType><element name="AuthenticationFailedFault" nillable="true" type="tns2:AuthenticationFailedFault"/></schema><schema targetNamespace="http://lookup.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="LookupFault"><sequence/></complexType><element name="LookupFault" nillable="true" type="tns3:LookupFault"/></schema><schema targetNamespace="http://localhost:8080/" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="ArrayOf_tns1_Enhanced2OpmModelPermissionsValue"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Enhanced2OpmModelPermissionsValue[]"/></restriction></complexContent></complexType></schema><schema targetNamespace="http://recursiveDisable.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="RecursiveDisableFault"><sequence/></complexType><element name="RecursiveDisableFault" nillable="true" type="tns4:RecursiveDisableFault"/></schema><schema targetNamespace="http://create.fault.objectprocess.org" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="CreationFault"><sequence/></complexType><element name="CreationFault" nillable="true" type="tns5:CreationFault"/></schema></wsdl:types>
+  <wsdl:message name="getMetaRevisionByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="createOpmModelRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:EditableOpmModelValue"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedOpmModelByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="AuthenticationFailedFault">
+    <wsdl:part name="fault" type="tns2:AuthenticationFailedFault"/>
+  </wsdl:message>
+  <wsdl:message name="disableOpmModelRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+    <wsdl:part name="in3" type="xsd:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="setOpmModelPermissionsRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:EditableOpmModelPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedOpmModelPermissionsByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:OpmModelPermissionsPK"/>
+  </wsdl:message>
+  <wsdl:message name="getRevisionByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="LookupFault">
+    <wsdl:part name="fault" type="tns3:LookupFault"/>
+  </wsdl:message>
+  <wsdl:message name="enableOpmModelRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+    <wsdl:part name="in3" type="xsd:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="getAllRevisionsResponse">
+    <wsdl:part name="getAllRevisionsReturn" type="xsd:anyType"/>
+  </wsdl:message>
+  <wsdl:message name="updateOpmModelResponse">
+  </wsdl:message>
+  <wsdl:message name="RecursiveDisableFault">
+    <wsdl:part name="fault" type="tns4:RecursiveDisableFault"/>
+  </wsdl:message>
+  <wsdl:message name="getAllRevisionsRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedOpmModelPermissionsByPKResponse">
+    <wsdl:part name="getEnhancedOpmModelPermissionsByPKReturn" type="tns1:EnhancedOpmModelPermissionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="updateOpmModelRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="tns1:UpdatableOpmModelValue"/>
+  </wsdl:message>
+  <wsdl:message name="getPreCommitRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="createOpmModelResponse">
+    <wsdl:part name="createOpmModelReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getOpmModelByPKResponse">
+    <wsdl:part name="getOpmModelByPKReturn" type="tns1:OpmModelValue"/>
+  </wsdl:message>
+  <wsdl:message name="disableOpmModelResponse">
+  </wsdl:message>
+  <wsdl:message name="enableOpmModelResponse">
+  </wsdl:message>
+  <wsdl:message name="getOpmModelRevisionsByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getOpmModelRevisionsByPKResponse">
+    <wsdl:part name="getOpmModelRevisionsByPKReturn" type="tns1:OpmModelRevisionsValue"/>
+  </wsdl:message>
+  <wsdl:message name="getPreCommitResponse">
+    <wsdl:part name="getPreCommitReturn" type="xsd:anyType"/>
+  </wsdl:message>
+  <wsdl:message name="getRevisionByPKResponse">
+    <wsdl:part name="getRevisionByPKReturn" type="tns1:FullRevisionValue"/>
+  </wsdl:message>
+  <wsdl:message name="getMetaRevisionByPKResponse">
+    <wsdl:part name="getMetaRevisionByPKReturn" type="tns1:MetaRevisionValue"/>
+  </wsdl:message>
+  <wsdl:message name="getEnhancedOpmModelByPKResponse">
+    <wsdl:part name="getEnhancedOpmModelByPKReturn" type="tns1:EnhancedOpmModelValue"/>
+  </wsdl:message>
+  <wsdl:message name="getOpmModelByPKRequest">
+    <wsdl:part name="in0" type="xsd:string"/>
+    <wsdl:part name="in1" type="xsd:string"/>
+    <wsdl:part name="in2" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="CreationFault">
+    <wsdl:part name="fault" type="tns5:CreationFault"/>
+  </wsdl:message>
+  <wsdl:message name="setOpmModelPermissionsResponse">
+  </wsdl:message>
+  <wsdl:portType name="OpmModelAccessLocal">
+    <wsdl:operation name="setOpmModelPermissions" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:setOpmModelPermissionsRequest" name="setOpmModelPermissionsRequest"/>
+      <wsdl:output message="impl:setOpmModelPermissionsResponse" name="setOpmModelPermissionsResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getOpmModelByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getOpmModelByPKRequest" name="getOpmModelByPKRequest"/>
+      <wsdl:output message="impl:getOpmModelByPKResponse" name="getOpmModelByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedOpmModelByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getEnhancedOpmModelByPKRequest" name="getEnhancedOpmModelByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedOpmModelByPKResponse" name="getEnhancedOpmModelByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getOpmModelRevisionsByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getOpmModelRevisionsByPKRequest" name="getOpmModelRevisionsByPKRequest"/>
+      <wsdl:output message="impl:getOpmModelRevisionsByPKResponse" name="getOpmModelRevisionsByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRevisions" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getAllRevisionsRequest" name="getAllRevisionsRequest"/>
+      <wsdl:output message="impl:getAllRevisionsResponse" name="getAllRevisionsResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMetaRevisionByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getMetaRevisionByPKRequest" name="getMetaRevisionByPKRequest"/>
+      <wsdl:output message="impl:getMetaRevisionByPKResponse" name="getMetaRevisionByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getRevisionByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getRevisionByPKRequest" name="getRevisionByPKRequest"/>
+      <wsdl:output message="impl:getRevisionByPKResponse" name="getRevisionByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getPreCommit" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getPreCommitRequest" name="getPreCommitRequest"/>
+      <wsdl:output message="impl:getPreCommitResponse" name="getPreCommitResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedOpmModelPermissionsByPK" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:getEnhancedOpmModelPermissionsByPKRequest" name="getEnhancedOpmModelPermissionsByPKRequest"/>
+      <wsdl:output message="impl:getEnhancedOpmModelPermissionsByPKResponse" name="getEnhancedOpmModelPermissionsByPKResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateOpmModel" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:updateOpmModelRequest" name="updateOpmModelRequest"/>
+      <wsdl:output message="impl:updateOpmModelResponse" name="updateOpmModelResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="disableOpmModel" parameterOrder="in0 in1 in2 in3">
+      <wsdl:input message="impl:disableOpmModelRequest" name="disableOpmModelRequest"/>
+      <wsdl:output message="impl:disableOpmModelResponse" name="disableOpmModelResponse"/>
+      <wsdl:fault message="impl:RecursiveDisableFault" name="RecursiveDisableFault"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="enableOpmModel" parameterOrder="in0 in1 in2 in3">
+      <wsdl:input message="impl:enableOpmModelRequest" name="enableOpmModelRequest"/>
+      <wsdl:output message="impl:enableOpmModelResponse" name="enableOpmModelResponse"/>
+      <wsdl:fault message="impl:LookupFault" name="LookupFault"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="createOpmModel" parameterOrder="in0 in1 in2">
+      <wsdl:input message="impl:createOpmModelRequest" name="createOpmModelRequest"/>
+      <wsdl:output message="impl:createOpmModelResponse" name="createOpmModelResponse"/>
+      <wsdl:fault message="impl:AuthenticationFailedFault" name="AuthenticationFailedFault"/>
+      <wsdl:fault message="impl:CreationFault" name="CreationFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OpmModelServiceSoapBinding" type="impl:OpmModelAccessLocal">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setOpmModelPermissions">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="setOpmModelPermissionsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="setOpmModelPermissionsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpmModelByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getOpmModelByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getOpmModelByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedOpmModelByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedOpmModelByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedOpmModelByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpmModelRevisionsByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getOpmModelRevisionsByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getOpmModelRevisionsByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRevisions">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getAllRevisionsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getAllRevisionsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMetaRevisionByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getMetaRevisionByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getMetaRevisionByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRevisionByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRevisionByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getRevisionByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPreCommit">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getPreCommitRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getPreCommitResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnhancedOpmModelPermissionsByPK">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getEnhancedOpmModelPermissionsByPKRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getEnhancedOpmModelPermissionsByPKResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOpmModel">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateOpmModelRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="updateOpmModelResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableOpmModel">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="disableOpmModelRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="disableOpmModelResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enableOpmModel">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="enableOpmModelRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="enableOpmModelResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOpmModel">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="createOpmModelRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="createOpmModelResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OpmModelService">
+    <wsdl:port binding="impl:OpmModelServiceSoapBinding" name="OpmModelService">
+      <wsdlsoap:address location="http://127.0.0.1:8080/axis/services/OpmModelService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,734 @@
+gui.opx.LoadException: Error loading file - OPX file is empty
+gui.opx.LoadException: Error loading file - OPX file is empty
+	at gui.opx.Loader.load(Loader.java:30)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.SaveException: / by zero
+gui.opx.SaveException: / by zero
+	at gui.opx.ver2.SaverVer2.save(SaverVer2.java:111)
+	at gui.opx.Saver.save(Saver.java:61)
+	at gui.Opcat2._save(Opcat2.java:4240)
+	at gui.Opcat2._saveAs(Opcat2.java:4290)
+	at gui.Opcat2._save(Opcat2.java:4232)
+	at gui.Opcat2.access$12(Opcat2.java:4229)
+	at gui.Opcat2$6.run(Opcat2.java:1248)
+java.io.EOFException: Unexpected end of ZLIB input stream
+java.io.EOFException: Unexpected end of ZLIB input stream
+	at java.util.zip.InflaterInputStream.fill(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at java.util.zip.GZIPInputStream.read(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at org.apache.xerces.impl.XMLEntityManager$RewindableInputStream.read(Unknown Source)
+	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:455)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:769)
+	at gui.opx.Loader.load(Loader.java:22)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.LoadException: Error loading file - OPX file is empty
+gui.opx.LoadException: Error loading file - OPX file is empty
+	at gui.opx.Loader.load(Loader.java:30)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.SaveException: / by zero
+gui.opx.SaveException: / by zero
+	at gui.opx.ver2.SaverVer2.save(SaverVer2.java:111)
+	at gui.opx.Saver.save(Saver.java:61)
+	at gui.Opcat2._save(Opcat2.java:4240)
+	at gui.Opcat2._saveAs(Opcat2.java:4290)
+	at gui.Opcat2._save(Opcat2.java:4232)
+	at gui.Opcat2.access$12(Opcat2.java:4229)
+	at gui.Opcat2$6.run(Opcat2.java:1248)
+java.io.EOFException: Unexpected end of ZLIB input stream
+java.io.EOFException: Unexpected end of ZLIB input stream
+	at java.util.zip.InflaterInputStream.fill(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at java.util.zip.GZIPInputStream.read(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at org.apache.xerces.impl.XMLEntityManager$RewindableInputStream.read(Unknown Source)
+	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:455)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:769)
+	at gui.opx.Loader.load(Loader.java:22)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.LoadException: Error loading file - OPX file is empty
+gui.opx.LoadException: Error loading file - OPX file is empty
+	at gui.opx.Loader.load(Loader.java:30)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.SaveException: Saving error occured on file C:\Documents and Settings\user\My Documents\NoName.opz
+/ by zero
+gui.opx.SaveException: Saving error occured on file C:\Documents and Settings\user\My Documents\NoName.opz
+/ by zero
+	at gui.opx.Saver.save(Saver.java:67)
+	at gui.Opcat2._save(Opcat2.java:4240)
+	at gui.Opcat2._saveAs(Opcat2.java:4290)
+	at gui.Opcat2._save(Opcat2.java:4232)
+	at gui.Opcat2.access$12(Opcat2.java:4229)
+	at gui.Opcat2$6.run(Opcat2.java:1248)
+java.io.EOFException: Unexpected end of ZLIB input stream
+java.io.EOFException: Unexpected end of ZLIB input stream
+	at java.util.zip.InflaterInputStream.fill(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at java.util.zip.GZIPInputStream.read(Unknown Source)
+	at java.util.zip.InflaterInputStream.read(Unknown Source)
+	at org.apache.xerces.impl.XMLEntityManager$RewindableInputStream.read(Unknown Source)
+	at org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:455)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:769)
+	at gui.opx.Loader.load(Loader.java:22)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.LoadException: Error loading file - OPX file is empty
+gui.opx.LoadException: Error loading file - OPX file is empty
+	at gui.opx.Loader.load(Loader.java:30)
+	at gui.Opcat2._loadProject(Opcat2.java:4385)
+	at gui.Opcat2.loadOpxFile(Opcat2.java:4336)
+	at gui.Opcat2.access$18(Opcat2.java:4318)
+	at gui.Opcat2$10.run(Opcat2.java:1313)
+gui.opx.SaveException: Saving error occured on file C:\Documents and Settings\user\My Documents\NoName.opz on saver version 3
+ Error text: / by zero
+gui.opx.SaveException: Saving error occured on file C:\Documents and Settings\user\My Documents\NoName.opz on saver version 3
+ Error text: / by zero
+	at gui.opx.Saver.save(Saver.java:70)
+	at gui.Opcat2._save(Opcat2.java:4240)
+	at gui.Opcat2._saveAs(Opcat2.java:4290)
+	at gui.Opcat2._save(Opcat2.java:4232)
+	at gui.Opcat2.access$12(Opcat2.java:4229)
+	at gui.Opcat2$6.run(Opcat2.java:1248)
+Jul 19, 2005 1:59:12 PM
+gui.metaLibraries.logic.MetaException: Meta-Library is not loaded 
+At Meta-Library C:\Documents and Settings\eran\My Documents\bio.opz
+gui.metaLibraries.logic.MetaException: Meta-Library is not loaded 
+At Meta-Library C:\Documents and Settings\eran\My Documents\bio.opz
+	at gui.metaLibraries.logic.MetaLibrary.getRolesCollection(MetaLibrary.java:198)
+	at gui.metaLibraries.dialogs.RolesDialog.initLists(RolesDialog.java:180)
+	at gui.metaLibraries.dialogs.RolesDialog.<init>(RolesDialog.java:68)
+	at gui.opdGraphics.dialogs.ProcessPropertiesDialog._constructRolesTab(ProcessPropertiesDialog.java:434)
+	at gui.opdGraphics.dialogs.ProcessPropertiesDialog.<init>(ProcessPropertiesDialog.java:143)
+	at gui.opdGraphics.opdBaseComponents.OpdProcess.callPropertiesDialog(OpdProcess.java:119)
+	at gui.opdGraphics.opdBaseComponents.BaseGraphicComponent.mouseClicked(BaseGraphicComponent.java:319)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+---
+Aug 9, 2005 3:26:50 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.JToolBarButton.<init>(JToolBarButton.java:20)
+	at gui.Opcat2._constructStandardToolBar(Opcat2.java:830)
+	at gui.Opcat2.<init>(Opcat2.java:373)
+	at gui.Opcat2.main(Opcat2.java:4461)
+---
+Aug 10, 2005 8:52:45 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.JToolBarButton.<init>(JToolBarButton.java:20)
+	at gui.Opcat2._constructStandardToolBar(Opcat2.java:830)
+	at gui.Opcat2.<init>(Opcat2.java:373)
+	at gui.Opcat2.main(Opcat2.java:4461)
+---
+Aug 10, 2005 8:54:22 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.JToolBarButton.<init>(JToolBarButton.java:20)
+	at gui.Opcat2._constructStandardToolBar(Opcat2.java:830)
+	at gui.Opcat2.<init>(Opcat2.java:373)
+	at gui.Opcat2.main(Opcat2.java:4461)
+---
+Aug 10, 2005 8:56:16 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.JToolBarButton.<init>(JToolBarButton.java:20)
+	at gui.Opcat2._constructStandardToolBar(Opcat2.java:830)
+	at gui.Opcat2.<init>(Opcat2.java:373)
+	at gui.Opcat2.main(Opcat2.java:4461)
+---
+Aug 10, 2005 8:59:53 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.Opcat2._constructMenuBar(Opcat2.java:474)
+	at gui.Opcat2.<init>(Opcat2.java:409)
+	at gui.Opcat2.main(Opcat2.java:4463)
+---
+Aug 10, 2005 9:01:15 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at javax.swing.JMenu.add(Unknown Source)
+	at gui.Opcat2._constructMenuBar(Opcat2.java:543)
+	at gui.Opcat2.<init>(Opcat2.java:409)
+	at gui.Opcat2.main(Opcat2.java:4464)
+---
+Aug 14, 2005 5:47:27 PM
+gui.opx.SaveException: Saving error occured on file C:\Documents and Settings\user\My Documents\after merge.opz on saver version 3
+ Error text: null
+gui.opx.SaveException: Saving error occured on file C:\Documents and Settings\user\My Documents\after merge.opz on saver version 3
+ Error text: null
+	at gui.opx.Saver.save(Saver.java:70)
+	at gui.Opcat2._save(Opcat2.java:4218)
+	at gui.Opcat2._saveAs(Opcat2.java:4268)
+	at gui.Opcat2.access$10(Opcat2.java:4227)
+	at gui.Opcat2$8.run(Opcat2.java:1271)
+---
+Aug 15, 2005 10:48:59 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at gui.util.Configuration.getLastUsedFiles(Configuration.java:55)
+	at gui.Opcat2._constructMenuBar(Opcat2.java:625)
+	at gui.Opcat2.<init>(Opcat2.java:417)
+	at gui.Opcat2.main(Opcat2.java:4511)
+---
+Aug 15, 2005 10:49:56 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at gui.util.Configuration.getLastUsedFiles(Configuration.java:55)
+	at gui.Opcat2._constructMenuBar(Opcat2.java:625)
+	at gui.Opcat2.<init>(Opcat2.java:417)
+	at gui.Opcat2.main(Opcat2.java:4511)
+---
+Aug 15, 2005 10:51:27 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at gui.util.Configuration.getLastUsedFiles(Configuration.java:51)
+	at gui.Opcat2._constructMenuBar(Opcat2.java:625)
+	at gui.Opcat2.<init>(Opcat2.java:417)
+	at gui.Opcat2.main(Opcat2.java:4511)
+---
+Aug 15, 2005 10:52:55 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at java.util.StringTokenizer.<init>(Unknown Source)
+	at gui.util.Configuration.getLastUsedFiles(Configuration.java:51)
+	at gui.Opcat2._constructMenuBar(Opcat2.java:626)
+	at gui.Opcat2.<init>(Opcat2.java:418)
+	at gui.Opcat2.main(Opcat2.java:4513)
+---
+Aug 15, 2005 10:57:43 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.Opcat2._constructMenuBar(Opcat2.java:629)
+	at gui.Opcat2.<init>(Opcat2.java:418)
+	at gui.Opcat2.main(Opcat2.java:4513)
+---
+Aug 17, 2005 9:16:59 PM
+java.io.FileNotFoundException: examples\CVS.opz (The system cannot find the file specified)
+java.io.FileNotFoundException: examples\CVS.opz (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:175)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:612)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:37)
+---
+Aug 17, 2005 9:17:03 PM
+java.io.FileNotFoundException: examples\CVS.opz (The system cannot find the file specified)
+java.io.FileNotFoundException: examples\CVS.opz (The system cannot find the file specified)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:175)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:612)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:37)
+---
+Sep 5, 2005 1:20:12 PM
+gui.util.OpcatException: Imported project was not loaded
+The file was not found:
+ Please check the name and try again
+gui.util.OpcatException: Imported project was not loaded
+The file was not found:
+ Please check the name and try again
+	at gui.actions.fileActions.ReuseImportAction.doImport(ReuseImportAction.java:85)
+	at gui.actions.fileActions.ReuseImportAction$1.run(ReuseImportAction.java:59)
+---
+Sep 5, 2005 1:20:26 PM
+gui.util.OpcatException: Imported project was not loaded
+The file was not found:
+ Please check the name and try again
+gui.util.OpcatException: Imported project was not loaded
+The file was not found:
+ Please check the name and try again
+	at gui.actions.fileActions.ReuseImportAction.doImport(ReuseImportAction.java:85)
+	at gui.actions.fileActions.ReuseImportAction$1.run(ReuseImportAction.java:59)
+---
+Sep 8, 2005 8:17:24 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadInstanceAttr(LoaderVer2.java:546)
+	at gui.opx.ver2.LoaderVer2._loadVisualGeneralRelation(LoaderVer2.java:693)
+	at gui.opx.ver2.LoaderVer2._loadGeneralRelationSection(LoaderVer2.java:657)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:396)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadVisualPart(LoaderVer2.java:374)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:117)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.reloadProject(FileControl.java:840)
+	at gui.actions.fileActions.ReuseImportAction$1.run(ReuseImportAction.java:60)
+---
+Sep 8, 2005 8:17:24 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:133)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.reloadProject(FileControl.java:840)
+	at gui.actions.fileActions.ReuseImportAction$1.run(ReuseImportAction.java:60)
+---
+Sep 8, 2005 8:37:37 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadInstanceAttr(LoaderVer2.java:546)
+	at gui.opx.ver2.LoaderVer2._loadVisualGeneralRelation(LoaderVer2.java:693)
+	at gui.opx.ver2.LoaderVer2._loadGeneralRelationSection(LoaderVer2.java:657)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:396)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadVisualPart(LoaderVer2.java:374)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:117)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.fileActions.ReuseImportAction.doImport(ReuseImportAction.java:83)
+	at gui.actions.fileActions.ReuseImportAction$1.run(ReuseImportAction.java:59)
+---
+Sep 8, 2005 8:37:37 PM
+gui.util.OpcatException: Imported project was not loaded
+This is not valid Opcat2 file
+gui.util.OpcatException: Imported project was not loaded
+This is not valid Opcat2 file
+	at gui.actions.fileActions.ReuseImportAction.doImport(ReuseImportAction.java:85)
+	at gui.actions.fileActions.ReuseImportAction$1.run(ReuseImportAction.java:59)
+---
+Sep 8, 2005 8:37:58 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadInstanceAttr(LoaderVer2.java:546)
+	at gui.opx.ver2.LoaderVer2._loadVisualGeneralRelation(LoaderVer2.java:693)
+	at gui.opx.ver2.LoaderVer2._loadGeneralRelationSection(LoaderVer2.java:657)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:396)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadVisualPart(LoaderVer2.java:374)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:117)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 8, 2005 8:37:58 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:133)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 8, 2005 8:38:54 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadInstanceAttr(LoaderVer2.java:546)
+	at gui.opx.ver2.LoaderVer2._loadVisualGeneralRelation(LoaderVer2.java:693)
+	at gui.opx.ver2.LoaderVer2._loadGeneralRelationSection(LoaderVer2.java:657)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:396)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:861)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:401)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:172)
+	at gui.opx.ver2.LoaderVer2._loadVisualPart(LoaderVer2.java:374)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:117)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 8, 2005 8:38:54 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:133)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 11, 2005 7:10:22 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.awt.Container.addImpl(Container.java:1019)
+	at java.awt.Container.add(Container.java:351)
+	at gui.opdGraphics.dialogs.ProcessPropertiesDialog._constructGeneralTab(ProcessPropertiesDialog.java:365)
+	at gui.opdGraphics.dialogs.ProcessPropertiesDialog.<init>(ProcessPropertiesDialog.java:129)
+	at gui.Opcat2._loadClasses(Opcat2.java:2434)
+	at gui.Opcat2.<init>(Opcat2.java:735)
+	at gui.Opcat2.main(Opcat2.java:2776)
+---
+Sep 11, 2005 7:10:41 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.awt.Container.addImpl(Container.java:1019)
+	at java.awt.Container.add(Container.java:351)
+	at gui.opdGraphics.dialogs.ProcessPropertiesDialog._constructGeneralTab(ProcessPropertiesDialog.java:365)
+	at gui.opdGraphics.dialogs.ProcessPropertiesDialog.<init>(ProcessPropertiesDialog.java:129)
+	at gui.Opcat2._loadClasses(Opcat2.java:2434)
+	at gui.Opcat2.<init>(Opcat2.java:735)
+	at gui.Opcat2.main(Opcat2.java:2776)
+---
+Sep 16, 2005 7:21:01 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadEntityAttr(LoaderVer2.java:261)
+	at gui.opx.ver3.LoaderVer3._loadLogicalObject(LoaderVer3.java:201)
+	at gui.opx.ver2.LoaderVer2._loadObjectSection(LoaderVer2.java:203)
+	at gui.opx.ver2.LoaderVer2._loadLogicalStructure(LoaderVer2.java:185)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:119)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.fileActions.LoadOpxAction$1.run(LoadOpxAction.java:61)
+---
+Sep 16, 2005 7:21:01 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:137)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:67)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.fileActions.LoadOpxAction$1.run(LoadOpxAction.java:61)
+---
+Sep 16, 2005 7:21:12 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadEntityAttr(LoaderVer2.java:261)
+	at gui.opx.ver2.LoaderVer2._loadLogicalObject(LoaderVer2.java:219)
+	at gui.opx.ver2.LoaderVer2._loadObjectSection(LoaderVer2.java:203)
+	at gui.opx.ver2.LoaderVer2._loadLogicalStructure(LoaderVer2.java:185)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:119)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 16, 2005 7:21:12 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:137)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 16, 2005 7:21:18 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadEntityAttr(LoaderVer2.java:261)
+	at gui.opx.ver2.LoaderVer2._loadLogicalObject(LoaderVer2.java:219)
+	at gui.opx.ver2.LoaderVer2._loadObjectSection(LoaderVer2.java:203)
+	at gui.opx.ver2.LoaderVer2._loadLogicalStructure(LoaderVer2.java:185)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:119)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 16, 2005 7:21:18 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:137)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.actions.controls.FileControl._loadProject(FileControl.java:287)
+	at gui.actions.controls.FileControl.loadOpxFileIntoProject(FileControl.java:314)
+	at gui.actions.controls.FileControl.loadOpxFile(FileControl.java:222)
+	at gui.actions.controls.FileControl.loadExample(FileControl.java:649)
+	at gui.actions.fileActions.LoadExampleAction$1.run(LoadExampleAction.java:34)
+---
+Sep 17, 2005 12:45:11 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.awt.Container.addImpl(Container.java:1019)
+	at java.awt.Container.add(Container.java:351)
+	at gui.opdGraphics.dialogs.ObjectPropertiesDialog._constructGeneralTab(ObjectPropertiesDialog.java:381)
+	at gui.opdGraphics.dialogs.ObjectPropertiesDialog.<init>(ObjectPropertiesDialog.java:150)
+	at gui.Opcat2._loadClasses(Opcat2.java:2443)
+	at gui.Opcat2.<init>(Opcat2.java:735)
+	at gui.Opcat2.main(Opcat2.java:2776)
+---
+Sep 22, 2005 5:26:39 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.awt.Container.addImpl(Container.java:1019)
+	at java.awt.Container.add(Container.java:351)
+	at gui.opdGraphics.dialogs.ObjectPropertiesDialog._constructDescriptionTab(ObjectPropertiesDialog.java:468)
+	at gui.opdGraphics.dialogs.ObjectPropertiesDialog.<init>(ObjectPropertiesDialog.java:154)
+	at gui.Opcat2._loadClasses(Opcat2.java:2443)
+	at gui.Opcat2.<init>(Opcat2.java:735)
+	at gui.Opcat2.main(Opcat2.java:2776)
+---
+Feb 8, 2006 5:06:31 PM
+java.lang.ClassCastException: gui.projectStructure.FundamentalRelationInstance
+java.lang.ClassCastException: gui.projectStructure.FundamentalRelationInstance
+	at gui.opdProject.Opd.resize(Opd.java:986)
+	at gui.opdProject.Opd.show(Opd.java:171)
+	at gui.opdProject.OpdProject.showRootOpd(OpdProject.java:405)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:132)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:68)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.controls.FileControl._loadProject(FileControl.java:308)
+	at gui.controls.FileControl.loadOpxFileIntoProject(FileControl.java:340)
+	at gui.controls.FileControl.loadOpxFile(FileControl.java:237)
+	at gui.actions.file.LoadOpxAction$1.run(LoadOpxAction.java:61)
+---
+Feb 8, 2006 5:06:31 PM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:138)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:68)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.controls.FileControl._loadProject(FileControl.java:308)
+	at gui.controls.FileControl.loadOpxFileIntoProject(FileControl.java:340)
+	at gui.controls.FileControl.loadOpxFile(FileControl.java:237)
+	at gui.actions.file.LoadOpxAction$1.run(LoadOpxAction.java:61)
+---
+Feb 8, 2006 5:20:01 PM
+java.lang.ClassCastException: gui.projectStructure.FundamentalRelationInstance
+java.lang.ClassCastException: gui.projectStructure.FundamentalRelationInstance
+	at gui.opdProject.Opd.refit(Opd.java:986)
+	at gui.opdProject.OpdProject.paste(OpdProject.java:2319)
+	at gui.actions.edit.PasteAction.doPaste(PasteAction.java:114)
+	at gui.actions.edit.PasteAction.access$0(PasteAction.java:78)
+	at gui.actions.edit.PasteAction$1.run(PasteAction.java:59)
+---
+Feb 8, 2006 5:24:28 PM
+java.lang.ClassCastException: gui.projectStructure.FundamentalRelationInstance
+java.lang.ClassCastException: gui.projectStructure.FundamentalRelationInstance
+	at gui.opdProject.Opd.refit(Opd.java:987)
+	at gui.opdProject.OpdProject.paste(OpdProject.java:2319)
+	at gui.actions.edit.PasteAction.doPaste(PasteAction.java:114)
+	at gui.actions.edit.PasteAction.access$0(PasteAction.java:78)
+	at gui.actions.edit.PasteAction$1.run(PasteAction.java:59)
+---
+Feb 17, 2006 8:18:13 AM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opx.ver2.LoaderVer2._loadVisualLink(LoaderVer2.java:827)
+	at gui.opx.ver2.LoaderVer2._loadVisualLinkSection(LoaderVer2.java:763)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:418)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:173)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:882)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:422)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:173)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:882)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:422)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:173)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:882)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:422)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:173)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:882)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:422)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:173)
+	at gui.opx.ver2.LoaderVer2._loadInzoomed(LoaderVer2.java:882)
+	at gui.opx.ver2.LoaderVer2._loadOpd(LoaderVer2.java:422)
+	at gui.opx.ver3.LoaderVer3._loadOpd(LoaderVer3.java:173)
+	at gui.opx.ver2.LoaderVer2._loadVisualPart(LoaderVer2.java:395)
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:122)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:68)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.controls.FileControl._loadProject(FileControl.java:308)
+	at gui.controls.FileControl.loadOpxFileIntoProject(FileControl.java:340)
+	at gui.controls.FileControl.loadOpxFile(FileControl.java:237)
+	at gui.actions.file.LoadOpxAction$1.run(LoadOpxAction.java:61)
+---
+Feb 17, 2006 8:18:13 AM
+gui.opx.LoadException: This is not valid Opcat2 file
+gui.opx.LoadException: This is not valid Opcat2 file
+	at gui.opx.ver2.LoaderVer2.load(LoaderVer2.java:138)
+	at gui.opx.ver3.LoaderVer3.load(LoaderVer3.java:68)
+	at gui.opx.Loader.load(Loader.java:43)
+	at gui.controls.FileControl._loadProject(FileControl.java:308)
+	at gui.controls.FileControl.loadOpxFileIntoProject(FileControl.java:340)
+	at gui.controls.FileControl.loadOpxFile(FileControl.java:237)
+	at gui.actions.file.LoadOpxAction$1.run(LoadOpxAction.java:61)
+---
+Feb 17, 2006 8:42:12 AM
+java.lang.IllegalArgumentException: bad position: 891
+java.lang.IllegalArgumentException: bad position: 891
+	at javax.swing.text.JTextComponent.setCaretPosition(Unknown Source)
+	at gui.Opcat2.updateStructureChange(Opcat2.java:2657)
+	at gui.opdProject.OpdProject._delete(OpdProject.java:2831)
+	at gui.opdProject.OpdProject._delete(OpdProject.java:2865)
+	at gui.opdProject.OpdProject.delete(OpdProject.java:2396)
+	at gui.actions.edit.DeleteAction.actionPerformed(DeleteAction.java:33)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.AbstractButton.doClick(Unknown Source)
+	at javax.swing.AbstractButton.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Actions.actionPerformed(Unknown Source)
+	at javax.swing.SwingUtilities.notifyAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBinding(Unknown Source)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(Unknown Source)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(Unknown Source)
+	at javax.swing.JMenuBar.processBindingForKeyStrokeRecursive(Unknown Source)
+	at javax.swing.JMenuBar.processKeyBinding(Unknown Source)
+	at javax.swing.KeyboardManager.fireBinding(Unknown Source)
+	at javax.swing.KeyboardManager.fireKeyboardAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBindingsForAllComponents(Unknown Source)
+	at javax.swing.JComponent.processKeyBindings(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+---
+Feb 19, 2006 12:26:27 PM
+java.lang.NullPointerException
+java.lang.NullPointerException
+	at gui.opdProject.Opd.refit(Opd.java:988)
+	at gui.opdProject.OpdProject.paste(OpdProject.java:2319)
+	at gui.actions.edit.PasteAction.doPaste(PasteAction.java:116)
+	at gui.actions.edit.PasteAction.access$0(PasteAction.java:78)
+	at gui.actions.edit.PasteAction$1.run(PasteAction.java:59)
+---
+Feb 26, 2006 2:50:00 PM
+gui.opx.LoadException: The file was not found:C:\Documents and Settings\raanan\My Documents\OPCAT Projects\Barak.opz
+ Please check the name and try again
+gui.opx.LoadException: The file was not found:C:\Documents and Settings\raanan\My Documents\OPCAT Projects\Barak.opz
+ Please check the name and try again
+	at gui.controls.FileControl.loadOpxFileIntoProject(FileControl.java:344)
+	at gui.controls.FileControl.loadOpxFile(FileControl.java:237)
+	at gui.actions.file.LoadPrevious$1.run(Unknown Source)
+---
+Feb 26, 2006 3:59:54 PM
+gui.opx.LoadException: The file was not found:C:\Documents and Settings\raanan\My Documents\OPCAT Projects\requirments system.opz
+ Please check the name and try again
+gui.opx.LoadException: The file was not found:C:\Documents and Settings\raanan\My Documents\OPCAT Projects\requirments system.opz
+ Please check the name and try again
+	at gui.controls.FileControl.loadOpxFileIntoProject(FileControl.java:344)
+	at gui.controls.FileControl.loadOpxFile(FileControl.java:237)
+	at gui.actions.file.LoadPrevious$1.run(LoadPrevious.java:41)
+---

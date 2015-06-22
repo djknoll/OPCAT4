@@ -1,0 +1,213 @@
+package gui.opmEntities;
+import exportedAPI.OpcatConstants;
+
+/**
+ * ontology import
+ * @author Eran Toch
+ */
+import gui.metaLibraries.logic.RolesManager;
+
+import java.util.Vector;
+
+
+/**
+* This class represents Thing in OPM
+*
+* @version	2.0
+* @author		Stanislav Obydionnov
+* @author		Yevgeny   Yaroker
+*/
+
+public abstract class OpmThing extends OpmConnectionEdge
+{
+//---------------------------------------------------------------------------
+// The private attributes/members are located here
+  private boolean physical;     // true if physical, false if informational
+  private String scope;  //can be 0 - public,1 - protected ,2 - private
+
+	private int numberOfInstances;
+	private String role;
+	
+	/**
+	 * A roles manager that manage {@link Role} objects for the current 
+	 * <code>OpmThing</code>. The manager is set to <code>null</code> and is 
+	 * initialized only if called by the <code>getRolesManager</code> method.
+	 * @author Eran Toch
+	 */
+	protected RolesManager rolesManager = null;
+
+/**
+* Creates an OpmThing with specified id and name. Id of created OpmThing
+* must be unique in OPCAT system
+*
+* @param id OpmThing id
+* @param name OpmThing name
+*/
+
+	public OpmThing(long thingId,String thingName)
+	{
+		  super(thingId,thingName);
+		  physical=false;
+		  scope = OpcatConstants.PUBLIC;
+		  numberOfInstances = 1;
+		  role = "";
+	}
+
+	protected void copyPropsFrom(OpmThing origin)
+	{
+		super.copyPropsFrom(origin);
+		physical=origin.isPhysical();
+		scope = origin.getScope();
+		role = origin.getFreeTextRole();
+		numberOfInstances = origin.getNumberOfInstances();
+		
+		//Copying the roles - using the roles manager
+		//By Eran Toch
+		rolesManager = (RolesManager)origin.getRolesManager().clone();
+		
+	}
+
+	protected boolean hasSameProps(OpmThing pThing)
+	{
+		return (super.hasSameProps(pThing) &&
+				(physical == pThing.isPhysical()) &&
+				scope.equals(pThing.getScope()) &&
+				role.equals(pThing.getRole()) &&
+				(numberOfInstances == pThing.getNumberOfInstances()) &&
+				(getRolesManager().equals(pThing.getRolesManager())));
+	}
+
+/**
+* Sets the physical/informational property of OpmThing. If value of
+* physical is true it's a physical thing, otherwise informational
+*
+*/
+
+	public void setPhysical(boolean physical)
+	{
+		this.physical = physical;
+	}
+
+/**
+* Returns true if this OpmThing is physical. If it's informational
+* returns false
+*
+*/
+
+	public boolean isPhysical()
+	{
+		return physical;
+	}
+
+
+
+
+/**
+* Sets the scope of OpmThing.
+*
+* @param scope a String specifying the scope of the Thing
+*/
+
+	public void setScope(String scope)
+	{
+		this.scope = scope;
+	}
+
+
+/**
+* Returns the scope of OpmThing.
+*
+* @return  a String containing thing's scope
+*/
+
+	public String getScope()
+	{
+		return scope;
+	}
+
+	public int getNumberOfInstances()
+	{
+		return numberOfInstances;
+	}
+
+	public void setNumberOfInstances(int nOfIns)
+	{
+		numberOfInstances = nOfIns;
+	}
+
+	/**
+	 * Returns the full graphical representation of the roles, including free text
+	 * <code>String</code> roles and meta-libraries based roles. 
+	 * @author Eran Toch
+	 * @return
+	 */
+	public String getRole()
+	{
+		String output = "";
+		if (role != null && !role.equals(""))	{
+			output += role;
+		}
+		if (rolesManager != null) {
+			if (getRolesManager().hasRoles())	{
+				if (!output.equals(""))	{
+					output += ", ";
+				}
+				output += getRolesManager().getRolesText();
+			}
+		}
+		return output;
+	}
+	
+	/**
+	 * Returns the text of the free text <code>String</code> role (without 
+	 * meta-libraries roles).
+	 * @author Eran Toch
+	 */
+	public String getFreeTextRole()	{
+		return role;
+	}
+
+	public void setRole(String role)
+	{
+		this.role = role;
+	}
+	
+	/**
+	 * Returns the {@link RolesManager}, which manages roles for this <code>OpmThing</code>.
+	 * The method creates a new <code>RolesManager</code> if it was <code>null</code>.
+	 * Each <code>Thing</code> has one <code>RolesManager</code>.
+	 * @return	The <code>RolesManager</code> of this Thing.
+	 * @author Eran Toch
+	 */
+	public RolesManager getRolesManager()	{
+		if (rolesManager == null)	{
+			rolesManager = new RolesManager();
+		}
+		return rolesManager;
+	}
+	
+	/**
+	 * Returns a a <code>Vector</code> object containing pairs of Thing name / Library Name.
+	 * @return	A <code>Vector</code> object holding <code>Property</code> object, 
+	 * in which the thing name has the key of <code>RolesManager.THING_NAME</code>
+	 * and the meta-library name is keyed under <code>RolesManager.LIBRARY_NAME</code>.
+	 * <p>
+	 * The following code demonstrates how to print the role reference:
+	 * <p>
+	 * <code>
+	 * Vector allRoles = theThing.getRolesRepresentation();<br>
+	 * if (allRoles.size() > 0)	{<br>
+	 * 		Properties aRole = (Properties)allRoles.get(0);<br>
+	 * 		String roleThingName = aRole.getProperty(RolesManager.THING_NAME);<br>
+	 * 		String roleLibraryName = aRole.getProperty(RolesManager.LIBRARY_NAME);<br>
+	 * 		System.out.println(roleThingName + ":" + roleLibraryName);<br>
+	 * }<br>
+	 * </code> 
+	 * @author Eran Toch
+	 */
+	public Vector getRolesRepresentation()	{
+		Vector vec = getRolesManager().getOPLRepresentation();
+		return vec;
+	}
+		
+}
